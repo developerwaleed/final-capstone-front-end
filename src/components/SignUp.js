@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/SignUp.css';
 
 const SignUp = () => (
   <section className="form-container">

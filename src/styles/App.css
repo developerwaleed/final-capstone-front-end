@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -28,7 +30,8 @@ body {
   flex-direction: column;
   background: #fff;
   gap: 0.5rem;
-  width: min(100%, 400px);
+  width: 100%;
+  max-width: 400px;
 }
 
 .auth-form label {
@@ -45,7 +48,6 @@ body {
   padding: 0.5rem;
   font-size: 1rem;
   outline: none;
-
   transition: box-shadow 0.15s ease;
 }
 
@@ -62,7 +64,6 @@ body {
   color: #fff;
   margin-top: 0.5rem;
   cursor: pointer;
-
   transition: background-color 0.15s ease;
 }
 
