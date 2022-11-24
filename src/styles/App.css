@@ -20,10 +20,11 @@ body {
 
 .form-container header {
   color: #fff;
+  text-shadow: 0 0 0.5rem #e8a200;
 }
 
 .auth-form {
-  box-shadow: 0 0 0 0.05rem rgb(221, 221, 221), 0 0 0.5rem #79990f;
+  box-shadow: 0 0 0 0.05rem rgb(221, 221, 221), 0 0 1rem #e8a200;
   padding: 1rem;
   border-radius: 0.25rem;
   display: flex;
@@ -41,7 +42,7 @@ body {
   font-weight: 500;
 }
 
-.auth-form input {
+.auth-form :where(input, textarea) {
   border-radius: 0.25rem;
   border: 0;
   box-shadow: 0 0 0 1px #e0ecbd;
@@ -51,11 +52,11 @@ body {
   transition: box-shadow 0.15s ease;
 }
 
-.auth-form input:is(:hover, :focus, :active) {
+.auth-form :where(input, textarea):is(:hover, :focus, :active) {
   box-shadow: 0 0 0 1px #97bf11;
 }
 
-.auth-form button {
+.auth-form :where(button) {
   border-radius: 0.25rem;
   border: 0;
   background-color: #97bf11;

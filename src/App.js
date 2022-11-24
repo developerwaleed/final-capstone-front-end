@@ -1,10 +1,10 @@
-import SignUp from './components/SignUp';
+import AddFitnessActivity from './components/AddFitnessActivity';
 import './styles/App.css';
 
 function App() {
   return (
     <div className="App">
-      <SignUp />
+      <AddFitnessActivity />
     </div>
   );
 }
