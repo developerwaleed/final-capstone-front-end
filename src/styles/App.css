@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  background-color: #97bf11;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container header {
+  color: #fff;
+}
+
+.auth-form {
+  box-shadow: 0 0 0 0.05rem rgb(221, 221, 221), 0 0 0.5rem #79990f;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form label {
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.auth-form input {
+  border-radius: 0.25rem;
+  border: 0;
+  box-shadow: 0 0 0 1px #e0ecbd;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.auth-form input:is(:hover, :focus, :active) {
+  box-shadow: 0 0 0 1px #97bf11;
+}
+
+.auth-form button {
+  border-radius: 0.25rem;
+  border: 0;
+  background-color: #97bf11;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.auth-form button:hover {
+  background-color: #88af09;
+}
