@@ -7,27 +7,27 @@ const SignUp = () => (
     </header>
     <form action="" className="signup-form auth-form">
       <div>
-        <label htmlFor="name">
+        <label htmlFor="signup-name">
           Your Name
-          <input id="name" type="text" placeholder="First and last name" required />
+          <input id="signup-name" type="text" placeholder="First and last name" required />
         </label>
       </div>
       <div>
-        <label htmlFor="email">
+        <label htmlFor="signup-email">
           E-mail
-          <input id="email" type="email" required />
+          <input id="signup-email" type="email" required />
         </label>
       </div>
       <div>
-        <label htmlFor="password">
+        <label htmlFor="signup-password">
           Password
-          <input id="password" type="password" placeholder="At least 6 characters" required />
+          <input id="signup-password" type="password" placeholder="At least 6 characters" required />
         </label>
       </div>
       <div>
-        <label htmlFor="password_confirmation">
+        <label htmlFor="signup-password_confirmation">
           Confirm Password
-          <input id="password_confirmation" type="password" required />
+          <input id="signup-password_confirmation" type="password" required />
         </label>
       </div>
       <button type="submit">Sign Up</button>

@@ -41,7 +41,7 @@ body {
   font-weight: 500;
 }
 
-.auth-form input {
+.auth-form :where(input, textarea) {
   border-radius: 0.25rem;
   border: 0;
   box-shadow: 0 0 0 1px #e0ecbd;
@@ -51,7 +51,7 @@ body {
   transition: box-shadow 0.15s ease;
 }
 
-.auth-form input:is(:hover, :focus, :active) {
+.auth-form :is(input, textarea):is(:hover, :focus, :active) {
   box-shadow: 0 0 0 1px #97bf11;
 }
 

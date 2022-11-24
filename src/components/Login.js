@@ -7,16 +7,16 @@ const Login = () => (
     </header>
     <form action="" className="login-form auth-form">
       <div>
-        <label htmlFor="name">
+        <label htmlFor="login-name">
           Your Name
-          <input id="name" type="text" required />
+          <input id="login-name" type="text" required />
         </label>
       </div>
       <div>
-        <label htmlFor="password">
+        <label htmlFor="login-password">
           Password
           <input
-            id="password"
+            id="login-password"
             type="password"
             required
           />
