@@ -1,0 +1,32 @@
+.links {
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  transition: 0.1s;
+}
+
+.links:hover {
+  color: var(--primary-green);
+}
+
+.ActivityCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.CardImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FitnessImg {
+  min-height: 350px;
+  max-height: 351px;
+  object-fit: cover;
+  min-width: 250px;
+  max-width: 250px;
+  border-radius: 20px;
+}
