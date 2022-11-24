@@ -1,0 +1,15 @@
+.form-container:has(.fa-form) {
+  background: #ffb400;
+}
+
+.fa-form {
+  box-shadow: 0 0 0 0.05rem rgb(221, 221, 221), 0 0 0.5rem #c18700;
+}
+
+.fa-form :is(input, textarea) {
+  box-shadow: 0 0 0 1px #fde9b9;
+}
+
+.fa-form :is(input, textarea):is(:hover, :focus, :active) {
+  box-shadow: 0 0 0 1px #ffb400;
+}

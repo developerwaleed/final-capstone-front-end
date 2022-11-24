@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/AddFitnessActivity.css';
 import randomItem from '../utils/randomItem';
 
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
