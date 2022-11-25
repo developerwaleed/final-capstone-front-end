@@ -1,10 +1,10 @@
-import AddFitnessActivity from './components/AddFitnessActivity';
 import './styles/App.css';
+import Home from './components/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <AddFitnessActivity />
+      <Home />
     </div>
   );
 }
