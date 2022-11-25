@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+:root {
+  --gray-text: #212529;
+  --primary-green: #97c010;
+  --pacifico: 'Pacifico', cursive;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  background-color: #97bf11;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container header {
+  color: #fff;
+  text-shadow: 0 0 0.5rem #e8a200;
+}
+
+.auth-form {
+  box-shadow: 0 0 0 0.05rem rgb(221, 221, 221), 0 0 1rem #e8a200;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form label {
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.auth-form :where(input, textarea) {
+  border-radius: 0.25rem;
+  border: 0;
+  box-shadow: 0 0 0 1px #e0ecbd;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.auth-form :where(input, textarea):is(:hover, :focus, :active) {
+  box-shadow: 0 0 0 1px #97bf11;
+}
+
+.auth-form :where(button) {
+  border-radius: 0.25rem;
+  border: 0;
+  background-color: #97bf11;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.auth-form button:hover {
+  background-color: #88af09;
+}
+
+.mainCnt {
+  margin-left: 260px;
+}
+
+@media (min-width: 576px) {
+  .h-sm-100 {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainCnt {
+    margin-left: 0;
+  }
+}
+
+.nav-link,
+.nav-link:focus,
+.nav-link:visited {
+  color: var(--gray-text);
+  background: transparent;
+}
+
+.nav-link:hover {
+  color: var(--primary-green);
+}
+
+.nav-link.active {
+  color: #fff !important;
+  background: var(--primary-green) !important;
+}
