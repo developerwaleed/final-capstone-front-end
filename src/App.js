@@ -1,10 +1,10 @@
 import './styles/App.css';
-import Home from './components/Home/Home';
+import ReserveFitnessActivity from './components/ReserveFitnessActivity';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <ReserveFitnessActivity />
     </div>
   );
 }

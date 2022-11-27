@@ -1,0 +1,32 @@
+.reserve-form-container {
+  color: #fff;
+}
+
+.reserve-form-container header {
+  margin-bottom: 1.25rem;
+}
+
+.reserve-form-container header h2 {
+  font-size: 22.5px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-shadow: none;
+
+  position: relative;
+}
+
+.reserve-form-container header h2::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  bottom: -1rem;
+  left: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.reserve-form-container > p {
+  width: 100%;
+  text-align: center;
+  max-width: 700px;
+}
