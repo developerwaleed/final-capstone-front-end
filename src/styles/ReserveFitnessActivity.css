@@ -1,5 +1,7 @@
 .reserve-form-container {
   color: #fff;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .reserve-form-container header {
@@ -29,4 +31,25 @@
   width: 100%;
   text-align: center;
   max-width: 700px;
+}
+.reserve-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.reserve-form > :is(button, select) {
+  padding: 0.75rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 1.5rem;
+}
+
+.reserve-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 0.05rem #fff;
+  text-align: center;
+  color: white;
 }
