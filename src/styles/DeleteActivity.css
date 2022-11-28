@@ -1,0 +1,44 @@
+.activity-container {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.activity-container li {
+  margin: 20px;
+  border: 5px solid #97bf11;
+  border-radius: 7px;
+  width: 25%;
+}
+
+.activity-container img {
+  width: 100%;
+}
+
+.activity-container div {
+  display: flex;
+  height: 120px;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #97bf11;
+  padding: 10px;
+}
+
+.activity-container span {
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.activity-container button {
+  display: block;
+  padding: 5px 20px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #dc3545;
+  border: none;
+}
