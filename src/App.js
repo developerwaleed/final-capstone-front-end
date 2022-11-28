@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/home';
 import MakeReservation from './pages/makeReserve';
@@ -7,7 +8,6 @@ import AddReservation from './pages/addReserve';
 import DeleteReservation from './pages/deleteReserve';
 // import Navigation from './components/navigation';
 // import Home from './components/Home/Home';
-
 import './App.css';
 import './styles/App.css';
 import DetailsPage from './components/DetailsPage/DetailsPage';
