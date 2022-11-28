@@ -10,6 +10,7 @@ import Navigation from './components/navigation';
 import './App.css';
 import './styles/App.css';
 import Home from './components/Home/Home';
+import DeleteFitnessActivity from './components/DeleteFitnessActivity';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </Routes>
       </Router>
       <Home />
+      <DeleteFitnessActivity />
     </div>
   );
 }
