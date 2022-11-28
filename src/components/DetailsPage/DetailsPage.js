@@ -26,7 +26,7 @@ export default function DetailsPage() {
           <div className="btncontainer">
             <button type="button" className="reservebtn">
               <i className="fa-solid fa-dumbbell me-3" />
-              Book
+              Reserve
             </button>
           </div>
         </div>
