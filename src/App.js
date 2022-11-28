@@ -11,6 +11,8 @@ import MyReservationsPage from './components/MyReservationsPage/MyReservationsPa
 import './App.css';
 import './styles/App.css';
 // import DetailsPage from './components/DetailsPage/DetailsPage';
+import ReserveFitnessActivity from './components/ReserveFitnessActivity';
+
 
 function App() {
   return (
