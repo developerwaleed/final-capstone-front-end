@@ -5,12 +5,12 @@ import MakeReservation from './pages/makeReserve';
 import MyReservation from './pages/myReserve';
 import AddReservation from './pages/addReserve';
 import DeleteReservation from './pages/deleteReserve';
+import MyReservationsPage from './components/MyReservationsPage/MyReservationsPage';
 // import Navigation from './components/navigation';
 // import Home from './components/Home/Home';
-
 import './App.css';
 import './styles/App.css';
-import DetailsPage from './components/DetailsPage/DetailsPage';
+// import DetailsPage from './components/DetailsPage/DetailsPage';
 
 function App() {
   return (
@@ -25,7 +25,8 @@ function App() {
           <Route path="/deletereserve" element={<DeleteReservation />} />
         </Routes>
       </Router>
-      <DetailsPage />
+      {/* <DetailsPage /> */}
+      <MyReservationsPage />
     </div>
   );
 }
