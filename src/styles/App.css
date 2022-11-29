@@ -6,6 +6,10 @@
   --pacifico: 'Pacifico', cursive;
 }
 
+.App {
+  display: flex;
+}
+
 .mainCnt {
   margin-left: 260px;
 }

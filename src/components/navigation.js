@@ -8,10 +8,10 @@ function Navigation() {
       <h2>GymFit</h2>
       <nav className="navigationLinks">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/makereserve">Make Reservation</NavLink>
-        <NavLink to="/myreserve">My Reservations</NavLink>
-        <NavLink to="/addreserve">Add Reservation</NavLink>
-        <NavLink to="/deletereserve">Delete Reservation</NavLink>
+        <NavLink to="/make-reservation">Make Reservation</NavLink>
+        <NavLink to="/reservations">My Reservations</NavLink>
+        <NavLink to="/fitness/new">Add Reservation</NavLink>
+        <NavLink to="/fitness/delete">Delete Reservation</NavLink>
       </nav>
       <footer>
         <ul>
