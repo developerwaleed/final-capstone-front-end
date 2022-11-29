@@ -1,16 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Homepage from './pages/home';
-import MakeReservation from './pages/makeReserve';
-import MyReservation from './pages/myReserve';
-import AddReservation from './pages/addReserve';
-import DeleteReservation from './pages/deleteReserve';
-import Navigation from './components/navigation';
-
-import './App.css';
 import './styles/App.css';
 import Home from './components/Home/Home';
 import DeleteFitnessActivity from './components/DeleteFitnessActivity';
+import ReserveFitnessActivity from './components/ReserveFitnessActivity';
 
 function App() {
   return (
@@ -27,6 +19,7 @@ function App() {
       </Router>
       <Home />
       <DeleteFitnessActivity />
+      <ReserveFitnessActivity />
     </div>
   );
 }
