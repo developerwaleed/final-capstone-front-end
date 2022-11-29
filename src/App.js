@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
+import Navigation from './components/navigation';
 
 import './styles/Navigation.css';
 import './styles/App.css';
@@ -13,7 +13,7 @@ import MyReservationsPage from './components/MyReservationsPage/MyReservationsPa
 
 function App() {
   return (
-    <div className="App">
+    <div className="App vh-100">
       <Router>
         <Navigation />
         <Routes>

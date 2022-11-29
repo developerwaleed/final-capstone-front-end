@@ -5,7 +5,7 @@ import randomItem from '../utils/randomItem';
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
 
 const AddFitnessActivity = () => (
-  <section className="form-container container">
+  <section className="form-container container p-0 m-0">
     <header>
       <h2>Create a Fitness Activity</h2>
     </header>
