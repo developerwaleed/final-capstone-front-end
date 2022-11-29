@@ -22,7 +22,7 @@ export default function DeleteFitnessActivity() {
   ];
 
   return (
-    <div>
+    <div className="delete-container container">
       <ul className="activity-container">
         {
       allFitness.map((fitness) => (

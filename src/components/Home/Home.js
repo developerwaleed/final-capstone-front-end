@@ -2,7 +2,7 @@ import React from 'react';
 import ActivitiesList from '../ActivitiesCard/ActivitiesList';
 
 const Home = () => (
-  <div>
+  <div className="container">
     <ActivitiesList />
   </div>
 );

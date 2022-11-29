@@ -5,7 +5,7 @@ import '../styles/ReserveFitnessActivity.css';
 const availableFitnessActivities = ['Gym', 'Swimming', 'Yoga'];
 
 const ReserveFitnessActivity = () => (
-  <section className="reserve-form-container form-container">
+  <section className="reserve-form-container form-container container">
     <header>
       <h2>BOOK A FITNESS ACTIVITY</h2>
     </header>
