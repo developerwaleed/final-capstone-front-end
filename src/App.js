@@ -10,6 +10,8 @@ import AddFitnessActivity from './components/AddFitnessActivity';
 import DeleteFitnessActivity from './components/DeleteFitnessActivity';
 import ReserveFitnessActivity from './components/ReserveFitnessActivity';
 import MyReservationsPage from './components/MyReservationsPage/MyReservationsPage';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/make-reservation" element={<ReserveFitnessActivity />} />
           <Route path="/reservations" element={<MyReservationsPage />} />
           <Route path="/fitness/new" element={<AddFitnessActivity />} />

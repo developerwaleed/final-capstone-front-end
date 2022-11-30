@@ -10,8 +10,8 @@ function Navigation() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/make-reservation">Make Reservation</NavLink>
         <NavLink to="/reservations">My Reservations</NavLink>
-        <NavLink to="/fitness/new">Add Reservation</NavLink>
-        <NavLink to="/fitness/delete">Delete Reservation</NavLink>
+        <NavLink to="/fitness/new">Add Fitness Activity</NavLink>
+        <NavLink to="/fitness/delete">Delete Fitness Activity</NavLink>
       </nav>
       <footer>
         <ul>
