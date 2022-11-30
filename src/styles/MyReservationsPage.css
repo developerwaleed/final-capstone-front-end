@@ -19,6 +19,10 @@
   color: var(--primary-green);
 }
 
+.reservation-main-cont {
+  gap: 7vh;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 350px;

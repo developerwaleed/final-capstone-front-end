@@ -1,8 +1,11 @@
+.delete-container {
+  margin: auto;
+}
+
 .activity-container {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin: 20px;
   flex-wrap: wrap;
 }
 
