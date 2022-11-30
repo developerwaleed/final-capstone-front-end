@@ -1,0 +1,3 @@
+const GET_FITNESS_ACTIVITIES = 'rails-react-app/GET_FITNESS_ACTIVITIES';
+
+export default GET_FITNESS_ACTIVITIES;

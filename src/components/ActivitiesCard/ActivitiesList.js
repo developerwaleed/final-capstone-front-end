@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
+// import { useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ActivitiesCard from './ActivitiesCard';
 import '../../styles/Carousel.css';
+import store from '../../redux/configureStore';
+import getFitnessActivites from '../../redux/actions/fitness-activities';
 
 export default function ActivitiesList() {
+  // const activites = useSelector((state) => state.greeting);
+
+  useEffect(() => {
+    store.dispatch(getFitnessActivites());
+  }, []);
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
@@ -47,7 +55,7 @@ export default function ActivitiesList() {
             renderBottomCenterControls={false}
           >
             <ActivitiesCard
-              FitnessActivityName="Yoga"
+              FitnessActivityName="s"
               picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
               Description="Yoga is the best thign someone can do...."
             />
