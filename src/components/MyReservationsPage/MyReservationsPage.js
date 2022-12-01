@@ -7,7 +7,7 @@ export default function MyReservationsPage() {
     <div className="container mx-0 my-5 p-0">
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center reservation-main-cont m-0 p-0">
         <div className="my-reservation-header">
-          <h2 className="my-4"><strong>My Reservations</strong></h2>
+          <h2 className="mt-4"><strong>My Reservations</strong></h2>
         </div>
         <div className="d-flex flex-wrap align-items-center justify-content-center">
           <MyReservationsCard

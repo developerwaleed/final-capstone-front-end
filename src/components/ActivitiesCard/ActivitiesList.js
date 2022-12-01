@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ActivitiesCard from './ActivitiesCard';
 import '../../styles/Carousel.css';
@@ -9,7 +9,7 @@ import store from '../../redux/configureStore';
 import getFitnessActivites from '../../redux/actions/fitness-activities';
 
 export default function ActivitiesList() {
-  // const activites = useSelector((state) => state.greeting);
+  const activites = useSelector((state) => state.fitnessActivities);
 
   useEffect(() => {
     store.dispatch(getFitnessActivites());
@@ -25,7 +25,6 @@ export default function ActivitiesList() {
   if (lgUp) {
     SlideToShowNumber = 3;
   }
-
   return (
     <>
       <div className="home-header">
@@ -54,36 +53,15 @@ export default function ActivitiesList() {
             slidesToShow={SlideToShowNumber}
             renderBottomCenterControls={false}
           >
-            <ActivitiesCard
-              FitnessActivityName="s"
-              picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              Description="Yoga is the best thign someone can do...."
-            />
-            <ActivitiesCard
-              FitnessActivityName="Yoga"
-              picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              Description="Yoga is the best thign someone can do...."
-            />
-            <ActivitiesCard
-              FitnessActivityName="Yoga"
-              picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              Description="Yoga is the best thign someone can do...."
-            />
-            <ActivitiesCard
-              FitnessActivityName="Yoga"
-              picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              Description="Yoga is the best thign someone can do...."
-            />
-            <ActivitiesCard
-              FitnessActivityName="Yoga"
-              picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              Description="Yoga is the best thign someone can do...."
-            />
-            <ActivitiesCard
-              FitnessActivityName="Yoga"
-              picture="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zml0bmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              Description="Yoga is the best thign someone can do...."
-            />
+            {activites.fitnessActivities?.data.map((activity) => (
+              <ActivitiesCard
+                key={activity.id}
+                FitnessActivityName={activity.attributes.name}
+                Description={activity.attributes.description}
+                price={activity.attributes.amount}
+                picture={activity.attributes['images-urls'][0]}
+              />
+            ))}
           </Carousel>
         </div>
       </div>

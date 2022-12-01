@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Display:wght@300&display=swap');
+
 .navContainer {
-  width: 20%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 30px 0 30px 50px;
-  border-right: 1px solid rgba(128, 128, 128, 0.514);
+  align-items: center;
+  gap: 10vh;
+  width: 20%;
   height: 100vh;
+  padding: 15px;
+  border-right: 1px solid rgba(128, 128, 128, 0.514);
 }
 
 .navigationLinks {
@@ -19,13 +22,18 @@ footer ul a {
 
 .navigationLinks a {
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 400;
   color: #000;
   margin-bottom: 15px;
   padding: 5px;
   transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-head {
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
 }
 
 .navigationLinks a:active {
@@ -34,8 +42,25 @@ footer ul a {
 }
 
 .navigationLinks a:hover {
-  background-color: #97bf11;
+  color: #97bf11;
+}
+
+.Nav-Links {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.NavLink-Container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  border-radius: 10px;
+  padding: 10px 0 10px 10px;
+}
+
+.NavLink-Container.active {
+  background: #83a809;
   color: #fff;
+  padding: 10px 0 10px 10px;
 }
 
 footer ul {
