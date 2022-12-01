@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import getCurrentUser from '../redux/actions/current-user';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getCurrentUser } from '../redux/actions/current-user';
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const currentUser = useSelector((state) => state.currentUser);
+
+  if (currentUser.name) {
+    navigate('/', { replace: true });
+  }
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const user = { user: { email, password } };
+    setEmail('');
+    setPassword('');
 
     dispatch(getCurrentUser(user));
   };

@@ -6,17 +6,10 @@ import randomItem from '../utils/randomItem';
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
 
 function submitToAPI(data) {
-  console.log(data);
   fetch(' http://127.0.0.1:3001/api/v1/fitness_activities', {
     method: 'POST',
     body: data,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    }).catch((error) => {
-      console.error('Error:', error);
-    });
+  }).then((response) => response.json());
 }
 
 function handleSubmit(e) {
@@ -62,24 +55,13 @@ const AddFitnessActivity = () => {
         <div>
           <label htmlFor="amount">
             Amount
-            <input
-              id="fa-amount"
-              name="amount"
-              type="number"
-              required
-            />
+            <input id="fa-amount" name="amount" type="number" required />
           </label>
         </div>
         <div>
           <label htmlFor="images">
             Image
-            <input
-              id="fa-image"
-              name="images"
-              multiple
-              type="file"
-              required
-            />
+            <input id="fa-image" name="images" multiple type="file" required />
           </label>
         </div>
         <div>
@@ -96,11 +78,7 @@ const AddFitnessActivity = () => {
           </label>
         </div>
         <input type="hidden" name="dates" value={values} />
-        <DatePicker
-          multiple
-          value={values}
-          onChange={setValues}
-        />
+        <DatePicker multiple value={values} onChange={setValues} />
         <button type="submit">Create</button>
       </form>
     </section>
