@@ -1,19 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getCurrentUser from './actions/current-user';
+import { getCurrentUser, createUser } from './actions/current-user';
 
-const initialState = {
-  currentUser: null,
-};
+const initialState = { user: null, errors: null };
 
 const currentUserSlice = createSlice({
   name: 'currentUser',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getCurrentUser.fulfilled, (state, action) => ({
+    builder.addCase(createUser.fulfilled, (state, action) => ({
       ...state,
-      currentUser: action.payload,
+      user: action.payload,
     }));
+    builder.addCase(getCurrentUser.fulfilled, (_, action) => action.payload);
   },
 });
 

@@ -1,20 +1,27 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// const createUser = createAsyncThunk(
-//   'currentUser/GET_CURRENT_USER',
-//   async (user) => {
-//     const response = await fetch('http://127.0.0.1:3001/users', {
-//       method: 'POST',
-//       body: JSON.stringify(user)
-//     })
+export const createUser = createAsyncThunk(
+  'currentUser/CREATE_USER',
+  async (user) => {
+    const response = await fetch('http://127.0.0.1:3001/users', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-//     const data = await response.json();
+    const data = await response.json();
 
-//     return data;
-//   }
-// )
+    if (data.status['0']?.errors) {
+      return {};
+    }
 
-const getCurrentUser = createAsyncThunk(
+    return data.status.data;
+  },
+);
+
+export const getCurrentUser = createAsyncThunk(
   'currentUser/GET_CURRENT_USER',
   async (user) => {
     const response = await fetch('http://127.0.0.1:3001/users/sign_in', {
@@ -25,13 +32,10 @@ const getCurrentUser = createAsyncThunk(
       },
     });
 
-    console.log(response);
-    const data = await response.json();
-
-    console.log(data);
-
-    return data;
+    if (response.status === 200) {
+      const data = await response.json();
+      return { user: data.status.data, errors: null };
+    }
+    return { user: null, errors: 'Email or password is incorrect' };
   },
 );
-
-export default getCurrentUser;
