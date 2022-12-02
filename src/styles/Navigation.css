@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Display:wght@300&display=swap');
 
-.navContainer {
+.DesktopNavContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10vh;
   width: 20%;
   height: 100vh;
-  padding: 15px;
   background-color: #fefefe;
   border-right: 1px solid #f0f5f2;
 }
@@ -23,11 +22,10 @@ footer ul a {
 
 .navigationLinks a {
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: #000;
   margin-bottom: 15px;
-  padding: 5px;
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 
@@ -55,13 +53,12 @@ footer ul a {
   align-items: baseline;
   gap: 0.5rem;
   border-radius: 10px;
-  padding: 10px 0 10px 10px;
+  padding: 10px;
 }
 
 .NavLink-Container.active {
   background: #83a809;
   color: #fff;
-  padding: 10px 0 10px 10px;
 }
 
 footer ul {
@@ -71,4 +68,75 @@ footer ul {
   align-items: flex-start;
   justify-content: space-between;
   padding-left: 0;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav-head {
+  display: none;
+}
+
+.visible {
+  margin-top: 55px !important;
+}
+
+.nav-links-mobile {
+  display: flex;
+  justify-content: center !important;
+}
+
+@media screen and (max-width: 990px) {
+  .DesktopNavContainer {
+    position: absolute;
+    right: 100vw;
+    z-index: 10;
+  }
+
+  .nav-head {
+    opacity: 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .mobile-nav {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    width: 100%;
+    height: 10vh;
+    padding: 20px;
+  }
+
+  .fa-bars {
+    position: absolute;
+    left: 25px;
+    top: 28px;
+    z-index: 1000;
+    font-size: 25px;
+  }
+
+  .mobile-nav-head {
+    display: block;
+    justify-self: end;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .mobile-navLinks {
+    position: absolute;
+    width: 100vw;
+    z-index: 10;
+    right: 0;
+    margin-top: -350px;
+    height: 0;
+    border-radius: 20px;
+    transition: margin 0.5s;
+  }
+
+  .mobile-navLinks-child {
+    background: white;
+  }
 }
