@@ -6,7 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import ActivitiesCard from './ActivitiesCard';
 import '../../styles/Carousel.css';
 import store from '../../redux/configureStore';
-import getFitnessActivites from '../../redux/actions/fitness-activities';
+import { getFitnessActivites } from '../../redux/actions/fitness-activities';
 
 export default function ActivitiesList() {
   const activites = useSelector((state) => state.fitnessActivities);

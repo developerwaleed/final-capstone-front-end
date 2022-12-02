@@ -1,38 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteFitnessActivity, getFitnessActivites } from '../redux/actions/fitness-activities';
 
 import '../styles/DeleteActivity.css';
 
 export default function DeleteFitnessActivity() {
-  const allFitness = [
-    {
-      id: 1,
-      name: 'Gym',
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80',
-    },
-    {
-      id: 2,
-      name: 'Swim',
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80',
-    },
-    {
-      id: 3,
-      name: 'Gym',
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80',
-    },
-  ];
+  const activities = useSelector((state) => state.fitnessActivities);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFitnessActivites());
+  }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteFitnessActivity(id));
+  };
 
   return (
     <div className="delete-container container p-0 m-0">
       <ul className="activity-container">
         {
-      allFitness.map((fitness) => (
+      activities.map((fitness) => (
         <li className="" key={fitness.id}>
           <img className="activity-img" src={fitness.image} alt="fitness_image" />
           <div className="">
             <span className="activity-name">
               {fitness.name}
             </span>
-            <button className="delete-btn" type="button"> Delete</button>
+            <button className="delete-btn" type="button" onClick={() => handleDelete(fitness.id)}>Delete</button>
           </div>
         </li>
       ))
