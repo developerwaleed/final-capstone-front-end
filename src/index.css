@@ -30,3 +30,7 @@ code {
     'Courier New',
     monospace;
 }
+
+.App {
+  display: flex;
+}

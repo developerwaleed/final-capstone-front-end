@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { deleteFitnessActivity, getFitnessActivites } from '../redux/actions/fitness-activities';
+import { deleteFitnessActivity } from '../redux/actions/fitness-activities';
 import store from '../redux/configureStore';
 import '../styles/DeleteActivity.css';
 
 export default function DeleteFitnessActivity() {
   const { fitnessActivities } = useSelector((state) => state.fitnessActivities);
-
-  useEffect(() => {
-    store.dispatch(getFitnessActivites());
-  }, [fitnessActivities]);
 
   const handleDelete = (id) => {
     store.dispatch(deleteFitnessActivity(id));

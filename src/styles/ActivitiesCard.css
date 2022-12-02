@@ -16,6 +16,14 @@
   min-height: 400px;
 }
 
+.ActivityCard:hover {
+  cursor: pointer;
+}
+
+.ActivityCard:hover h3 {
+  color: var(--primary-green);
+}
+
 .CardImg {
   display: flex;
   justify-content: center;
@@ -34,8 +42,12 @@
 .price {
   background-color: var(--primary-green);
   border-radius: 20px;
-  padding: 0.4rem 0.75rem;
+  padding: 0.5rem 0.8rem;
   margin-top: 1rem;
   color: white;
   font-weight: 500;
+}
+
+.card-desc {
+  height: 10vh;
 }

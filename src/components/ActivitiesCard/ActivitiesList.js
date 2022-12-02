@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ActivitiesCard from './ActivitiesCard';
 import '../../styles/Carousel.css';
-import store from '../../redux/configureStore';
-import { getFitnessActivites } from '../../redux/actions/fitness-activities';
 
 export default function ActivitiesList() {
   const activites = useSelector((state) => state.fitnessActivities);
 
-  useEffect(() => {
-    store.dispatch(getFitnessActivites());
-  }, []);
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
@@ -29,7 +24,7 @@ export default function ActivitiesList() {
     <>
       <div className="home-header">
         <h2 className="h2 text-center mt-5 text-uppercase">
-          <strong>Fitness Activities</strong>
+          <strong>Fitness Activities </strong>
         </h2>
         <p className="fs-5 text-center text-muted mb-5">
           Please select Your desired Service
@@ -56,6 +51,7 @@ export default function ActivitiesList() {
             {activites.fitnessActivities?.data.map((activity) => (
               <ActivitiesCard
                 key={activity.id}
+                id={activity.id}
                 FitnessActivityName={activity.attributes.name}
                 Description={activity.attributes.description}
                 price={activity.attributes.amount}
