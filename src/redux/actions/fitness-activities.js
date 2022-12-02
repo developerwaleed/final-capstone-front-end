@@ -8,7 +8,6 @@ const getFitnessActivites = createAsyncThunk(
     const { data } = await axios.get(
       'http://localhost:3001/api/v1/fitness_activities',
     );
-    // console.log('I am in redux=', data);
     return data;
   },
 );

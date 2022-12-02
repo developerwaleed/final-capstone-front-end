@@ -23,6 +23,10 @@ function handleSubmit(e) {
   for (let i = 0; i < e.target.images.files.length; i += 1) {
     data.append('fitness_activity[images][]', e.target.images.files[i]);
   }
+  e.target.name.value = '';
+  e.target.amount.value = '';
+  e.target.description.value = '';
+  e.target.dates.value = '';
   submitToAPI(data);
 }
 
