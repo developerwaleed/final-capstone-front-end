@@ -8,22 +8,22 @@ import '../styles/DeleteActivity.css';
 export default function DeleteFitnessActivity() {
   const { fitnessActivities } = useSelector((state) => state.fitnessActivities);
 
-  const handleDelete = (id) => {
+  const deleteFitness = (id) => {
     store.dispatch(deleteFitnessActivity(id));
   };
 
   return (
     <div className="delete-container container p-0 m-0">
-      <ul className="activity-container">
+      <ul className="activity-wrapper">
         {
-      fitnessActivities?.data.map((activity) => (
-        <li className="activity-card" key={activity.id}>
-          <img className="activity-img" src={`${API_ROUTE}${activity.attributes['images-urls'][1]}`} alt="activity-img" />
-          <div className="activity-content">
-            <span className="activity-name">
-              {activity.attributes.name}
+      fitnessActivities?.data.map((fitnessActivity) => (
+        <li key={fitnessActivity.id}>
+          <img src={`${API_ROUTE}${fitnessActivity.attributes['images-urls'][1]}`} alt="activity-img" />
+          <div className="activity-contents">
+            <span>
+              {fitnessActivity.attributes.name}
             </span>
-            <button className="delete-btn" type="button" onClick={() => { handleDelete(activity.id); }}>Delete</button>
+            <button className="delete-btn" type="button" onClick={() => { deleteFitness(fitnessActivity.id); }}>Delete</button>
           </div>
         </li>
       ))

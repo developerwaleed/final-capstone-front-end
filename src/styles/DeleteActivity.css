@@ -1,34 +1,59 @@
-.activity-container {
-  list-style-type: none;
-  padding: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Display:wght@300&display=swap');
+
+.activity-wrapper {
+  width: 100%;
+  padding: 0.5em;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 3rem;
   flex-wrap: wrap;
 }
 
-.activity-card {
-  border-radius: 0.25rem;
+.activity-wrapper li {
+  border-radius: 1em;
+  list-style-type: none;
   overflow: hidden;
-  box-shadow: 0 0 0 0.05rem #97bf11, 0 0 0.5rem rgba(0, 0, 0, 0.233);
-  height: max-content;
+  box-shadow: 0 0 0 0.05em #97bf11, 0 0 0.5em rgba(0, 0, 0, 0.255);
 }
 
-.activity-card img {
-  width: 250px;
+.activity-wrapper img {
+  width: 260px;
+  height: 300px;
 }
 
-.activity-content {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem 1rem;
+.activity-contents {
+  display: grid;
+  padding: 0.5em 1em;
+  row-gap: 15px;
 }
 
-.activity-card button {
+.delete-btn {
+  display: block;
+  margin: auto;
   background-color: #97bf11;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.25rem 1rem;
-  color: white;
+  border-radius: 5px;
+  padding: 0.25rem 1.5rem;
+  color: #fff;
   align-self: center;
   width: fit-content;
+  font-weight: 500;
+  border: 1px solid #fff;
+}
+
+.delete-btn:hover {
+  background-color: #97bf11 ;
+  color: #000;
+}
+
+.activity-contents span {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+@media screen and (max-width: 990px) {
+  .activity-wrapper {
+    margin: 50px auto;
+  }
 }
