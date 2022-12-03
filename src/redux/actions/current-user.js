@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import API_ROUTE from '../../config/api-route';
 
 export const createUser = createAsyncThunk(
   'currentUser/CREATE_USER',
   async (user) => {
-    const response = await fetch('http://127.0.0.1:3001/users', {
+    const response = await fetch(`${API_ROUTE}/users`, {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -14,17 +15,17 @@ export const createUser = createAsyncThunk(
     const data = await response.json();
 
     if (data.status['0']?.errors) {
-      return {};
+      return { user: null, errors: data.status['0']?.errors[0] };
     }
 
-    return data.status.data;
+    return { user: { ...data.status.data, password: user.password }, errors: '' };
   },
 );
 
 export const getCurrentUser = createAsyncThunk(
   'currentUser/GET_CURRENT_USER',
-  async (user) => {
-    const response = await fetch('http://127.0.0.1:3001/users/sign_in', {
+  async (user = null) => {
+    const response = await fetch(`${API_ROUTE}/users/sign_in`, {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {

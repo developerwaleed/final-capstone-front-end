@@ -61,3 +61,7 @@
 .auth-form button:hover {
   background-color: #88af09;
 }
+
+.auth-form button:disabled {
+  background-color: #c4da7f;
+}

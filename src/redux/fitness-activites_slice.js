@@ -15,10 +15,10 @@ const fitnessActivitiesSlice = createSlice({
         ...state,
         fitnessActivities: action.payload,
       }))
-      .addCase(deleteFitnessActivity.fulfilled, (state, action) => {
-        const fas = state.fitnessActivities;
-        return fas.data.filter((item) => item.id !== action.payload);
-      });
+      .addCase(deleteFitnessActivity.fulfilled, (state, action) => ({
+        ...state,
+        fitnessActivities: action.payload,
+      }));
   },
 });
 

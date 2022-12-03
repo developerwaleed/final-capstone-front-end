@@ -6,8 +6,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/configureStore';
 import { getFitnessActivites } from './redux/actions/fitness-activities';
+import confirmUserSession from './utils/userSession';
 
 store.dispatch(getFitnessActivites());
+confirmUserSession();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

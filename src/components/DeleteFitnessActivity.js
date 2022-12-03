@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import API_ROUTE from '../config/api-route';
 import { deleteFitnessActivity } from '../redux/actions/fitness-activities';
 import store from '../redux/configureStore';
 import '../styles/DeleteActivity.css';
@@ -17,12 +18,12 @@ export default function DeleteFitnessActivity() {
         {
       fitnessActivities?.data.map((activity) => (
         <li className="activity-card" key={activity.id}>
-          <img className="activity-img" src={`http://localhost:3001${activity.attributes['images-urls'][1]}`} alt="activity-img" />
+          <img className="activity-img" src={`${API_ROUTE}${activity.attributes['images-urls'][1]}`} alt="activity-img" />
           <div className="activity-content">
             <span className="activity-name">
               {activity.attributes.name}
             </span>
-            <button className="delete-btn" type="button" onClick={() => handleDelete(activity.id)}>Delete</button>
+            <button className="delete-btn" type="button" onClick={() => { handleDelete(activity.id); }}>Delete</button>
           </div>
         </li>
       ))

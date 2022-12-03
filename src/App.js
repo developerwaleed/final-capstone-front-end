@@ -16,16 +16,63 @@ import Login from './components/Login';
 function App() {
   return (
     <Router>
-      <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/make-reservation" element={<ReserveFitnessActivity />} />
-        <Route path="/reservations" element={<MyReservationsPage />} />
-        <Route path="/fitness/new" element={<AddFitnessActivity />} />
-        <Route path="/fitness/delete" element={<DeleteFitnessActivity />} />
-        <Route path="/fitness_activities/:id" element={<DetailsPage />} />
+        <Route
+          path="/"
+          element={(
+            <>
+              <Navigation />
+              <Home />
+            </>
+)}
+        />
+        <Route
+          path="/make-reservation"
+          element={(
+            <>
+              <Navigation />
+              <ReserveFitnessActivity />
+            </>
+)}
+        />
+        <Route
+          path="/reservations"
+          element={(
+            <>
+              <Navigation />
+              <MyReservationsPage />
+            </>
+)}
+        />
+        <Route
+          path="/fitness/new"
+          element={(
+            <>
+              <Navigation />
+              <AddFitnessActivity />
+            </>
+)}
+        />
+        <Route
+          path="/fitness/delete"
+          element={(
+            <>
+              <Navigation />
+              <DeleteFitnessActivity />
+            </>
+)}
+        />
+        <Route
+          path="/fitness_activities/:id"
+          element={(
+            <>
+              <Navigation />
+              <DetailsPage />
+            </>
+)}
+        />
       </Routes>
     </Router>
   );

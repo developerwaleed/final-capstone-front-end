@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import store from '../../redux/configureStore';
 import getSingleActivity from '../../redux/actions/single-activity';
 import '../../styles/DetailsPage.css';
+import API_ROUTE from '../../config/api-route';
 
 export default function DetailsPage() {
   const singleActivity = useSelector((state) => state.singleActivity);
@@ -25,7 +26,7 @@ export default function DetailsPage() {
       <div className="detailContainer">
         <div className="ActivityPicture">
           <img
-            src={`http://127.0.0.1:3001${activity?.['images-urls'][0]}`}
+            src={`${API_ROUTE}${activity?.['images-urls'][0]}`}
             alt="2022 Corolla"
             width="600px"
           />

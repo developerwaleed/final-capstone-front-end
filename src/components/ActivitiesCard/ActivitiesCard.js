@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import API_ROUTE from '../../config/api-route';
 import '../../styles/ActivitiesCard.css';
 
 // eslint-disable-next-line react/prop-types
@@ -15,7 +16,7 @@ const ActivityCard = ({
     <div className="ActivityCard">
       <div className="CardImg">
         <img
-          src={`http://127.0.0.1:3001${picture}`}
+          src={`${API_ROUTE}${picture}`}
           alt="Fiteness Activity"
           className="FitnessImg"
           height="500px"

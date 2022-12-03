@@ -1,34 +1,17 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-multi-date-picker';
+import API_ROUTE from '../config/api-route';
 import '../styles/AddFitnessActivity.css';
 import randomItem from '../utils/randomItem';
 
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
 
-function submitToAPI(data) {
-  fetch(' http://127.0.0.1:3001/api/v1/fitness_activities', {
+const submitToAPI = (data) => {
+  fetch(`${API_ROUTE}/api/v1/fitness_activities`, {
     method: 'POST',
     body: data,
   }).then((response) => response.json());
-}
-
-function handleSubmit(e) {
-  e.preventDefault();
-  const data = new FormData();
-
-  data.append('fitness_activity[name]', e.target.name.value);
-  data.append('fitness_activity[amount]', e.target.amount.value);
-  data.append('fitness_activity[description]', e.target.description.value);
-  data.append('fitness_activity[dates]', e.target.dates.value);
-  for (let i = 0; i < e.target.images.files.length; i += 1) {
-    data.append('fitness_activity[images][]', e.target.images.files[i]);
-  }
-  e.target.name.value = '';
-  e.target.amount.value = '';
-  e.target.description.value = '';
-  e.target.dates.value = '';
-  submitToAPI(data);
-}
+};
 
 const AddFitnessActivity = () => {
   const today = new Date();
@@ -37,6 +20,37 @@ const AddFitnessActivity = () => {
   tomorrow.setDate(tomorrow.getDate() + 1);
 
   const [values, setValues] = useState([today, tomorrow]);
+  const [errors, setErrors] = useState('');
+  const [notification, setNotification] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const {
+      name, amount, description, dates, images,
+    } = e.target;
+
+    if (description.value.length < 10) {
+      setNotification('');
+      setErrors('Decsription\'s length must be at least 10 characters');
+      return;
+    }
+    setErrors('');
+    setNotification('Fitness activity created successfully');
+
+    const data = new FormData();
+    data.append('fitness_activity[name]', name.value);
+    data.append('fitness_activity[amount]', amount.value);
+    data.append('fitness_activity[description]', description.value);
+    data.append('fitness_activity[dates]', dates.value);
+    for (let i = 0; i < images.files.length; i += 1) {
+      data.append('fitness_activity[images][]', images.files[i]);
+    }
+    name.value = '';
+    amount.value = '';
+    description.value = '';
+    dates.value = '';
+    submitToAPI(data);
+  };
 
   return (
     <section className="form-container container p-0 m-0">
@@ -44,6 +58,8 @@ const AddFitnessActivity = () => {
         <h2>Create a Fitness Activity</h2>
       </header>
       <form onSubmit={(e) => handleSubmit(e)} className="fa-form auth-form">
+        <div className="error">{errors}</div>
+        <div className="notification">{notification}</div>
         <div>
           <label htmlFor="name">
             Name of Activity
@@ -82,7 +98,7 @@ const AddFitnessActivity = () => {
           </label>
         </div>
         <input type="hidden" name="dates" value={values} />
-        <DatePicker multiple value={values} onChange={setValues} />
+        <DatePicker multiple value={values} onChange={setValues} required />
         <button type="submit">Create</button>
       </form>
     </section>
