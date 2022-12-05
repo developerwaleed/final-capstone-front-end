@@ -5,6 +5,9 @@ import {
 } from 'react-router-dom';
 import { createUser } from '../redux/actions/current-user';
 import { storeUser } from '../utils/userStorage';
+import getJwtToken from '../redux/actions/jwt-token';
+import { getFitnessActivities } from '../redux/actions/fitness-activities';
+import { storeToken } from '../utils/storeUserToken';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -24,7 +27,7 @@ const SignUp = () => {
     navigate('/');
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (password.length < 6) {
@@ -38,7 +41,20 @@ const SignUp = () => {
     }
 
     const user = { user: { name, email, password } };
-    dispatch(createUser(user));
+    const credentials = { email, password };
+    const response = await dispatch(createUser(user));
+    if (response.payload.user) {
+      const tokenResponse = await dispatch(getJwtToken(credentials));
+      if (tokenResponse.payload.token) {
+        storeToken(tokenResponse.payload.token);
+        dispatch(getFitnessActivities());
+      } else {
+        console.log('no token');
+      }
+    } else {
+      setErrors(response.payload.errors);
+      setProcessing(false);
+    }
     setProcessing(true);
   };
 

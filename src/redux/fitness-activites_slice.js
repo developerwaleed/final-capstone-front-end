@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getFitnessActivites, deleteFitnessActivity } from './actions/fitness-activities';
+import { addFitnessActivity, getFitnessActivities, deleteFitnessActivity } from './actions/fitness-activities';
 
 const initialState = {
-  fitnessActivities: null,
+  fitnessActivities: [],
 };
 
 const fitnessActivitiesSlice = createSlice({
@@ -11,14 +11,22 @@ const fitnessActivitiesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getFitnessActivites.fulfilled, (state, action) => ({
+      .addCase(getFitnessActivities.fulfilled, (state, action) => ({
         ...state,
         fitnessActivities: action.payload,
       }))
       .addCase(deleteFitnessActivity.fulfilled, (state, action) => ({
         ...state,
         fitnessActivities: action.payload,
-      }));
+      }))
+      .addCase(addFitnessActivity.fulfilled, (state, action) => {
+        const { fitnessActivities } = state;
+        const newFitnessActivities = [...fitnessActivities, action.payload];
+        return {
+          ...state,
+          fitnessActivities: newFitnessActivities,
+        };
+      });
   },
 });
 

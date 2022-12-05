@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import DatePicker from 'react-multi-date-picker';
-import API_ROUTE from '../config/api-route';
 import '../styles/AddFitnessActivity.css';
 import randomItem from '../utils/randomItem';
+import { addFitnessActivity } from '../redux/actions/fitness-activities';
 
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
-
-const submitToAPI = (data) => {
-  fetch(`${API_ROUTE}/api/v1/fitness_activities`, {
-    method: 'POST',
-    body: data,
-  }).then((response) => response.json());
-};
-
 const AddFitnessActivity = () => {
+  const dispatch = useDispatch();
+
   const today = new Date();
   const tomorrow = new Date();
 
@@ -45,11 +40,11 @@ const AddFitnessActivity = () => {
     for (let i = 0; i < images.files.length; i += 1) {
       data.append('fitness_activity[images][]', images.files[i]);
     }
+    dispatch(addFitnessActivity(data));
     name.value = '';
     amount.value = '';
     description.value = '';
     dates.value = '';
-    submitToAPI(data);
   };
 
   return (

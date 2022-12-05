@@ -29,7 +29,7 @@ function App() {
 )}
         />
         <Route
-          path="/make-reservation"
+          path="/fitness_activities/:id/reserve"
           element={(
             <>
               <Navigation />

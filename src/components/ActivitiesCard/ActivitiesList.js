@@ -7,8 +7,7 @@ import ActivitiesCard from './ActivitiesCard';
 import '../../styles/Carousel.css';
 
 export default function ActivitiesList() {
-  const activites = useSelector((state) => state.fitnessActivities);
-
+  const activities = useSelector((state) => state.fitnessActivities.fitnessActivities);
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
@@ -48,7 +47,7 @@ export default function ActivitiesList() {
             slidesToShow={SlideToShowNumber}
             renderBottomCenterControls={false}
           >
-            {activites.fitnessActivities?.data.map((activity) => (
+            {activities?.data?.map((activity) => (
               <ActivitiesCard
                 key={activity.id}
                 id={activity.id}

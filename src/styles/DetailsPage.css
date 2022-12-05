@@ -69,10 +69,9 @@
   padding: 10px;
 }
 
-.btncontainer button {
-  width: 10rem;
+.reserve-btn {
   border-radius: 20px;
-  padding: 0.5rem;
+  padding: 10px 20px;
   background-color: #97c010;
   color: #fff;
   border: none;
@@ -80,9 +79,12 @@
   font-weight: bold;
 }
 
-.btncontainer button:hover {
-  color: black;
-  background-color: #caf149;
+.reserve-btn:hover {
+  background-color: #b2d235;
+  color: #fff;
+  border: none;
+  font-size: large;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {

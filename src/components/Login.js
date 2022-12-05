@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { getCurrentUser } from '../redux/actions/current-user';
+import getJwtToken from '../redux/actions/jwt-token';
+import { getFitnessActivities } from '../redux/actions/fitness-activities';
 import { storeUser } from '../utils/userStorage';
+import { storeToken } from '../utils/storeUserToken';
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.currentUser);
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [processing, setProcessing] = useState(false);
@@ -27,12 +29,20 @@ const Login = () => {
     }
   }, [currentUser]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const user = { user: { email, password } };
+    const credentials = { email, password };
     dispatch(getCurrentUser(user));
-
+    const response = await dispatch(getJwtToken(credentials));
+    if (response.payload.token) {
+      console.log(response.payload.token);
+      storeToken(response.payload.token);
+      dispatch(getFitnessActivities());
+    } else {
+      console.log('no token');
+    }
     setProcessing(true);
   };
 

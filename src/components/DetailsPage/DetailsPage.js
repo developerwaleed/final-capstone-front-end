@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import store from '../../redux/configureStore';
 import getSingleActivity from '../../redux/actions/single-activity';
@@ -45,12 +45,10 @@ export default function DetailsPage() {
           <p className="w-100 my-5">
             {activity?.description}
           </p>
-          <div className="btncontainer">
-            <button type="button" className="reservebtn">
-              <i className="fa-solid fa-dumbbell me-3" />
-              Reserve
-            </button>
-          </div>
+          <NavLink to={`/fitness_activities/${id}/reserve`} className="reserve-btn">
+            <i className="fa-solid fa-dumbbell me-3"> </i>
+            <span>Reserve</span>
+          </NavLink>
         </div>
       </div>
     </div>
