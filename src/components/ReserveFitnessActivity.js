@@ -26,8 +26,11 @@ const ReserveFitnessActivity = () => {
     };
 
     const response = await dispatch(addReservation(data));
+    // log the response status
+    console.log(response);
     if (response) {
       dispatch(getReservations());
+      dispatch(getAvailableDates(fitnessActivityId));
     }
   };
 
@@ -43,11 +46,14 @@ const ReserveFitnessActivity = () => {
       </p>
       <form onSubmit={(e) => handleSubmit(e)} className="reserve-form">
         <select name="date" id="date">
+          {availableDates.data?.length < 1 && (
+            <option value="0">No available dates</option>
+          )}
           {availableDates.data?.map((data) => (
             <option key={data.id} value={data.id}>{data.attributes.date}</option>
           ))}
         </select>
-        <button type="submit">Book Now</button>
+        <button type="submit" disabled={availableDates.data?.length < 1}>Reserve</button>
       </form>
     </section>
   );
