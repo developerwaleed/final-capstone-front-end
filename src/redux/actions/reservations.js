@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ADD_RESERVATION, GET_AVAILABLE_DATES } from '../actionTypes';
+import { ADD_RESERVATION, GET_RESERVATIONS, GET_AVAILABLE_DATES } from '../actionTypes';
 import API_ROUTE from '../../config/api-route';
 import { getTokenFromStorage } from '../../utils/storeUserToken';
 
@@ -26,6 +26,20 @@ const addReservation = createAsyncThunk(
   },
 );
 
+const getReservations = createAsyncThunk(
+  GET_RESERVATIONS,
+  async () => {
+    const token = getTokenFromStorage();
+    const response = await axios.get(`${API_ROUTE}/api/v1/reservations`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    // console.log(response.data.data[0].relationships);
+    return response.data;
+  },
+);
+
 const getAvailableDates = createAsyncThunk(
   GET_AVAILABLE_DATES,
   async (fitnessActivityId) => {
@@ -38,4 +52,4 @@ const getAvailableDates = createAsyncThunk(
     return response.data;
   },
 );
-export { addReservation, getAvailableDates };
+export { addReservation, getReservations, getAvailableDates };

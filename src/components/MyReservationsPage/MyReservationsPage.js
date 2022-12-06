@@ -1,31 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getReservations } from '../../redux/actions/reservations';
 import '../../styles/MyReservationsPage.css';
 import MyReservationsCard from './MyReservationsCard';
 
 export default function MyReservationsPage() {
+  const dispatch = useDispatch();
+  const reservationsData = useSelector((state) => state.reservations.reservations);
+  const reservations = reservationsData.data || [];
+  const fitnessActivities = reservationsData.included?.filter((item) => item.type === 'fitness-activities') || [];
+  const availableDates = reservationsData.included?.filter((item) => item.type === 'available-dates') || [];
+  const reservationsCombined = reservations?.map((reservation) => ({
+    id: reservation.id,
+    fitnessActivity: fitnessActivities.find((activity) => activity.id === reservation.relationships['fitness-activity'].data.id),
+    dateBooked: availableDates.find((date) => date.id === reservation.relationships['available-date'].data.id),
+  }));
+
+  console.log(reservationsCombined);
+  const length = reservationsCombined?.length || 0;
+
+  useEffect(() => {
+    dispatch(getReservations());
+  },
+  []);
+
   return (
-    <div className="container mx-0 my-5 p-0">
-      <div className="container-fluid d-flex flex-column align-items-center justify-content-center reservation-main-cont m-0 p-0">
+    <div className="container mx-0 my-5">
+      <div className={`container-fluid d-flex flex-column ${length > 3 && 'align-items-center'} justify-content-center reservation-main-cont m-0 px-4`}>
         <div className="my-reservation-header">
-          <h2 className="mt-4"><strong>My Reservations</strong></h2>
+          <h2 className="mt-2"><strong>My Reservations</strong></h2>
         </div>
-        <div className="d-flex flex-wrap align-items-center justify-content-center">
-          <MyReservationsCard
-            ActivityName="Yoga"
-            PictureLink="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80"
-            ReservationDate="02-02-2002"
-            ReservationCity="San Francisco"
-            DriverName="Waleed"
-            Price="200$"
-          />
-          <MyReservationsCard
-            ActivityName="Yoga"
-            PictureLink="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80"
-            ReservationDate="02-02-2002"
-            ReservationCity="San Francisco"
-            DriverName="Waleed"
-            Price="200$"
-          />
+        <div className={`d-flex gap-4 flex-wrap align-items-center ${length > 3 && 'justify-content-center'} mt-4`}>
+          {reservationsCombined?.map((reservation) => (
+            <MyReservationsCard
+              key={reservation.id}
+              thumbnail={reservation.fitnessActivity.attributes['images-urls'][0]}
+              title={reservation.fitnessActivity.attributes.name}
+              date={reservation.dateBooked.attributes.date}
+            />
+          ))}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getAvailableDates, addReservation } from '../redux/actions/reservations';
+import { getAvailableDates, addReservation, getReservations } from '../redux/actions/reservations';
 import '../styles/ReserveFitnessActivity.css';
 
 const ReserveFitnessActivity = () => {
@@ -14,7 +14,7 @@ const ReserveFitnessActivity = () => {
   },
   [dispatch]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const dateId = e.target.date.value;
     console.log(dateId);
@@ -25,7 +25,10 @@ const ReserveFitnessActivity = () => {
       dateId,
     };
 
-    dispatch(addReservation(data));
+    const response = await dispatch(addReservation(data));
+    if (response) {
+      dispatch(getReservations());
+    }
   };
 
   return (

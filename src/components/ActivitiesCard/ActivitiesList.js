@@ -30,7 +30,7 @@ export default function ActivitiesList() {
         </p>
       </div>
       <div>
-        <div className="home-body ">
+        <div className="home-body">
           <Carousel
             renderCenterLeftControls={({ previousSlide }) => (
               <button type="button" onClick={previousSlide}>
@@ -43,7 +43,7 @@ export default function ActivitiesList() {
               </button>
             )}
             className="Activities-carousel"
-            wrapAround
+            // wrapAround
             slidesToShow={SlideToShowNumber}
             renderBottomCenterControls={false}
           >

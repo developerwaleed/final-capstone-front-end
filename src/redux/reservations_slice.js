@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addReservation, getAvailableDates } from './actions/reservations';
+import { addReservation, getReservations, getAvailableDates } from './actions/reservations';
 
 const initialState = {
   reservations: [],
@@ -12,6 +12,10 @@ const reservationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(addReservation.fulfilled, (state, action) => ({
+      ...state,
+      reservations: action.payload,
+    }));
+    builder.addCase(getReservations.fulfilled, (state, action) => ({
       ...state,
       reservations: action.payload,
     }));
