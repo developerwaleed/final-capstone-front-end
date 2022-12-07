@@ -1,92 +1,68 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
 
 <div align="center">
-
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="https://github.com/microverseinc/readme-template/blob/master/murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
 </div>
 
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+<details>
+  <summary>Click to view contents</summary>
+  <ol>
+    <li>
+      <a href="#about-project">📖 About the Project</a>
+        <ul>
+          <li><a href="#video">📹 Video</a></li>
+          <li>
+            <a href="#built-with">🛠 Built With</a>
+            <ul>
+              <li><a href="#tech-stack">Tech Stack</a></li>
+              <li><a href="#key-features">Key Features</a></li>
+            </ul>
+          </li>
+          <li><a href="#live-demo">🚀 Live Demo</a></li>
+        </ul>
+    </li>
+    <li>
+      <a href="#getting-started">💻 Getting Started</a>
+      <ul>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#run-tests">Run tests</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+      </ul>
+    </li>
+    <li><a href="#authors">👥 Authors</a></li>
+    <li><a href="#future-features">🔭 Future Features</a></li>
+    <li><a href="#contributing">🤝 Contributing</a></li>
+    <li><a href="#support">⭐️ Show your support</a></li>
+    <li><a href="#acknowledgements">🙏 Acknowledgements</a></li>
+    <li><a href="#faq">❓ FAQ</a></li>
+    <li><a href="#license">📝 License</a></li>
+  </ol>
+</details>
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 GymFit <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**GymFit** is a React front-end application that helps users make reservations for varying fitness activities while performing CRUD operations on the [Rails back-end application](https://github.com/developerwaleed/final-capstone-back-end).
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
 
 <details>
-  <summary>Client</summary>
+<summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://reactjs.org/">React</a></li>
   </ul>
 </details>
 
@@ -94,11 +70,11 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+This projects aim is to serve as the frontend for our fitness activities application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- Consume Rails API endpoints
+- Save data in redux store
+- Render data from redux store
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,9 +82,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+> Currently no demo is available
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,83 +90,55 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Node Package Manager (npm)
 
 ### Setup
 
-Clone this repository to your desired folder:
+#### Github
+- Enter this url: [https://github.com/developerwaleed/final-capstone-front-end/](https://github.com/developerwaleed/final-capstone-front-end/) in your web browser.
+- Once opened navigate to the top left level of the project a green code download button will be visible on the righthand side.
+- Select the download Zip option from drop-down menu.
+- Once the download is complete you will be able to access my project locally.
 
-<!--
-Example commands:
+#### Local (Terminal)
 
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone github.com/OkoyeCharles/final-capstone-front-end/.git
+  cd final-capstone-front-end
 ```
---->
 
 ### Install
 
-Install this project with:
-
-<!--
-Example command:
+Install dependencies and gems in this project with:
 
 ```sh
-  cd my-project
-  gem install
+  cd final-capstone-front-end
+  npm install
 ```
---->
+
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
+- Run `npm run start` or `npm start` to start a development server.
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+> Currently no tests are present
 
 ### Deployment
 
 You can deploy this project using:
 
-<!--
-Example:
-
-```sh
-
-```
- -->
+- Github Pages
+- Netlify
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,19 +146,35 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+### 👤 **Author1**
 
-👤 **Author1**
+- GitHub: [Waleed Amjad](https://github.com/developerwaleed)
+- LinkedIn: [Waleed Amjad](https://www.linkedin.com/in/developerwaleed/)
+- Twitter: [@developerwaleed](https://twitter.com/developerwaleed)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+### 👤 **Author2**
 
-👤 **Author2**
+- GitHub: [Okoye Charles](https://github.com/OkoyeCharles)
+- LinkedIn: [Okoye Charles](https://www.linkedin.com/in/charles-k-okoye/)
+- Twitter: [@Okoyecharles_](https://twitter.com/OkoyeCharles_)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+### 👤 **Author3**
+
+- GitHub: [Sidney Kaguli](https://github.com/xSidx)
+- LinkedIn: [Sidney kaguli](https://www.linkedin.com/in/sidney-kaguli/)
+- Twitter: [@_sid_o](https://twitter.com/_sid_o)
+
+### 👤 **Author4**
+
+- GitHub: [Priscilla Oyebade](https://github.com/OyePriscilla)
+- LinkedIn: [Priscilla Oyebade](https://www.linkedin.com/in/priscilla-oyebade-aa35b8238/)
+- Twitter: [@Prisicilla](https://twitter.com/Prisicilla)
+
+### 👤 **Author5**
+
+- GitHub: [Abdulhamid](https://github.com/abdulhamiid)
+- LinkedIn: [Abdulhamid Adio](https://www.linkedin.com/in/abdulhamid-adio/)
+- Twitter: [@abdulhamid_adio](https://twitter.com/abdulhamid_adio)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -220,11 +182,7 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- Currently none.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -232,9 +190,15 @@ Example:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Feel free to check the [issues page](../../issues/).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue, feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -242,9 +206,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project. Don't forget to give it a ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -252,25 +214,17 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+- A big thanks to [@microverseinc](https://github.com/microverseinc) for the project idea, guidance and inspiration.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
+<!-- FAQ  -->
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **What inspired me to create this project?**
 
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
+  - The inspiration for this project came from microverse – a software development bootcamp where you work with teammates remotely on different projects.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -279,7 +233,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
