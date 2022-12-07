@@ -1,15 +1,31 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import API_ROUTE from '../config/api-route';
-import { deleteFitnessActivity } from '../redux/actions/fitness-activities';
+import { deleteFitnessActivity, getFitnessActivities } from '../redux/actions/fitness-activities';
 import store from '../redux/configureStore';
 import '../styles/DeleteActivity.css';
 
 export default function DeleteFitnessActivity() {
   const { fitnessActivities } = useSelector((state) => state.fitnessActivities);
 
-  const deleteFitness = (id) => {
-    store.dispatch(deleteFitnessActivity(id));
+  const deleteFitness = async (id) => {
+    const { payload } = await store.dispatch(deleteFitnessActivity(id));
+    if (payload.message) {
+      document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100 h-25" role="alert">
+      <strong>Success: </strong>${payload.message}
+      </div>`;
+      setTimeout(() => {
+        document.getElementById('messages').innerHTML = '';
+      }, 3000);
+    } else {
+      document.getElementById('messages').innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-100 h-25" role="alert">
+      <strong>Error: </strong>${payload.errors[0]}
+      </div>`;
+      setTimeout(() => {
+        document.getElementById('messages').innerHTML = '';
+      }, 3000);
+    }
+    store.dispatch(getFitnessActivities());
   };
 
   return (

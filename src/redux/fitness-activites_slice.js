@@ -15,9 +15,8 @@ const fitnessActivitiesSlice = createSlice({
         ...state,
         fitnessActivities: action.payload,
       }))
-      .addCase(deleteFitnessActivity.fulfilled, (state, action) => ({
+      .addCase(deleteFitnessActivity.fulfilled, (state) => ({
         ...state,
-        fitnessActivities: action.payload,
       }))
       .addCase(addFitnessActivity.fulfilled, (state, action) => {
         const { fitnessActivities } = state;

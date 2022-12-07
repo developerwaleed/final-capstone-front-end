@@ -16,7 +16,6 @@ export default function MyReservationsPage() {
     dateBooked: availableDates.find((date) => date.id === reservation.relationships['available-date'].data.id),
   }));
 
-  console.log(reservationsCombined);
   const length = reservationsCombined?.length || 0;
 
   useEffect(() => {
@@ -34,6 +33,8 @@ export default function MyReservationsPage() {
           {reservationsCombined?.map((reservation) => (
             <MyReservationsCard
               key={reservation.id}
+              id={reservation.id}
+              fitnessActivityId={reservation.fitnessActivity.id}
               thumbnail={reservation.fitnessActivity.attributes['images-urls'][0]}
               title={reservation.fitnessActivity.attributes.name}
               date={reservation.dateBooked.attributes.date}

@@ -49,8 +49,6 @@ const SignUp = () => {
       if (tokenResponse.payload.token) {
         storeToken(tokenResponse.payload.token);
         dispatch(getFitnessActivities());
-      } else {
-        console.log('no token');
       }
     } else {
       showAlert(response.payload.errors, 'Error', 'danger', setAlert);

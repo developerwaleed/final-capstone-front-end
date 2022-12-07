@@ -24,8 +24,6 @@ const ReserveFitnessActivity = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const dateId = e.target.date.value;
-    console.log(dateId);
-    console.log(fitnessActivityId);
 
     const data = {
       fitnessActivityId,

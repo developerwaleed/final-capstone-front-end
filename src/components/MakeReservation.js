@@ -24,13 +24,18 @@ const MakeReservation = () => {
       </header>
       <form onSubmit={(e) => handleSubmit(e)} className="reserve-form">
         <select name="Activity" id="SelectActivity">
+          {activities.data?.length < 1 && (
+            <option value="">
+              No fitness activities available
+            </option>
+          )}
           {activities.data?.map((activity) => (
             <option key={activity.id} value={activity.id}>
               {activity.attributes.name}
             </option>
           ))}
         </select>
-        <button type="submit">Continue</button>
+        <button type="submit" disabled={activities.data?.length < 1}>Continue</button>
       </form>
     </section>
   );

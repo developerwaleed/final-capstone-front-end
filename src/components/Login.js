@@ -40,7 +40,6 @@ const Login = () => {
     const response = await dispatch(getJwtToken(credentials));
     if (response.payload.token) {
       dispatch(getFitnessActivities());
-      console.log(response.payload.token);
       storeToken(response.payload.token);
       document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100 h-25" role="alert">
       <strong>Success: </strong>Login Success
@@ -48,8 +47,6 @@ const Login = () => {
       setTimeout(() => {
         document.getElementById('messages').innerHTML = '';
       }, 3000);
-    } else {
-      console.log('no token');
     }
   };
 

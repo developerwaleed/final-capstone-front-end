@@ -34,10 +34,15 @@ const getFitnessActivities = createAsyncThunk(
 );
 
 const deleteFitnessActivity = createAsyncThunk(DELETE_FITNESS_ACTIVITY, async (id) => {
-  await axios.delete(`${API_ROUTE}/api/v1/fitness_activities/${id}`);
-  const { data } = await axios.get(
-    `${API_ROUTE}/api/v1/fitness_activities`,
-  );
+  const token = getTokenFromStorage();
+  const response = await fetch(`${API_ROUTE}/api/v1/fitness_activities/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await response.json();
   return data;
 });
 

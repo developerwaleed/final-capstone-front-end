@@ -6,6 +6,7 @@ const GET_FITNESS_ACTIVITY = 'rails-react-app/GET_FITNESS_ACTIVITY';
 const ADD_RESERVATION = 'rails-react-app/ADD_RESERVATION';
 
 const GET_RESERVATIONS = 'rails-react-app/GET_RESERVATIONS';
+const DELETE_RESERVATION = 'rails-react-app/DELETE_RESERVATION';
 
 const GET_AVAILABLE_DATES = 'rails-react-app/GET_AVAILABLE_DATES';
 
@@ -20,4 +21,5 @@ export {
   GET_RESERVATIONS,
   GET_AVAILABLE_DATES,
   GET_JWT_TOKEN,
+  DELETE_RESERVATION,
 };

@@ -1,13 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ADD_RESERVATION, GET_RESERVATIONS, GET_AVAILABLE_DATES } from '../actionTypes';
+import {
+  ADD_RESERVATION, GET_RESERVATIONS, GET_AVAILABLE_DATES, DELETE_RESERVATION,
+} from '../actionTypes';
 import API_ROUTE from '../../config/api-route';
 import { getTokenFromStorage } from '../../utils/storeUserToken';
 
 const addReservation = createAsyncThunk(
   ADD_RESERVATION,
   async ({ dateId, fitnessActivityId }) => {
-    console.log(dateId);
     const token = getTokenFromStorage();
     const response = await fetch(`${API_ROUTE}/api/v1/fitness_activities/${fitnessActivityId}/reservations`, {
       method: 'POST',
@@ -52,4 +53,20 @@ const getAvailableDates = createAsyncThunk(
     return response.data;
   },
 );
-export { addReservation, getReservations, getAvailableDates };
+
+const deleteReservation = createAsyncThunk(DELETE_RESERVATION, async (id, fitnessActivityId) => {
+  const token = getTokenFromStorage();
+  const response = await fetch(`${API_ROUTE}/api/v1/fitness_activities/${fitnessActivityId}/reservations/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await response.json();
+  return data;
+});
+
+export {
+  addReservation, getReservations, getAvailableDates, deleteReservation,
+};
