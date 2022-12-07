@@ -1,21 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 :root {
   --gray-text: #212529;
   --primary-green: #97c010;
   --pacifico: 'Pacifico', cursive;
-}
-
-.App {
-  display: flex;
-}
-
-.mainCnt {
-  margin-left: 260px;
-}
-
-.home-main-container {
-  gap: 11vh;
 }
 
 @media (min-width: 576px) {

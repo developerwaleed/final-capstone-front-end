@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/navigation';
-
 import './styles/Navigation.css';
 import './styles/App.css';
 import './styles/Form.css';
@@ -10,21 +9,82 @@ import AddFitnessActivity from './components/AddFitnessActivity';
 import DeleteFitnessActivity from './components/DeleteFitnessActivity';
 import ReserveFitnessActivity from './components/ReserveFitnessActivity';
 import MyReservationsPage from './components/MyReservationsPage/MyReservationsPage';
+import DetailsPage from './components/DetailsPage/DetailsPage';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import MakeReservation from './components/MakeReservation';
 
 function App() {
   return (
-    <div className="App vh-100">
-      <Router>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/make-reservation" element={<ReserveFitnessActivity />} />
-          <Route path="/reservations" element={<MyReservationsPage />} />
-          <Route path="/fitness/new" element={<AddFitnessActivity />} />
-          <Route path="/fitness/delete" element={<DeleteFitnessActivity />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/"
+          element={(
+            <>
+              <Navigation />
+              <Home />
+            </>
+)}
+        />
+        <Route
+          path="/make-reservation"
+          element={(
+            <>
+              <Navigation />
+              <MakeReservation />
+            </>
+)}
+        />
+        <Route
+          path="/fitness_activities/:id/reserve"
+          element={(
+            <>
+              <Navigation />
+              <ReserveFitnessActivity />
+            </>
+)}
+        />
+        <Route
+          path="/reservations"
+          element={(
+            <>
+              <Navigation />
+              <MyReservationsPage />
+            </>
+)}
+        />
+        <Route
+          path="/fitness/new"
+          element={(
+            <>
+              <Navigation />
+              <AddFitnessActivity />
+            </>
+)}
+        />
+        <Route
+          path="/fitness/delete"
+          element={(
+            <>
+              <Navigation />
+              <DeleteFitnessActivity />
+            </>
+)}
+        />
+        <Route
+          path="/fitness_activities/:id"
+          element={(
+            <>
+              <Navigation />
+              <DetailsPage />
+            </>
+)}
+        />
+      </Routes>
+    </Router>
   );
 }
 
