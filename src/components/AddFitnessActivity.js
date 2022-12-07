@@ -4,9 +4,13 @@ import DatePicker from 'react-multi-date-picker';
 import '../styles/AddFitnessActivity.css';
 import randomItem from '../utils/randomItem';
 import { addFitnessActivity } from '../redux/actions/fitness-activities';
+import Alert from './Alert';
+import showAlert from '../hooks/useAlert';
 
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
 const AddFitnessActivity = () => {
+  const [alert, setAlert] = useState(null);
+
   const dispatch = useDispatch();
 
   const today = new Date();
@@ -15,8 +19,8 @@ const AddFitnessActivity = () => {
   tomorrow.setDate(tomorrow.getDate() + 1);
 
   const [values, setValues] = useState([today, tomorrow]);
-  const [errors, setErrors] = useState('');
-  const [notification, setNotification] = useState('');
+  // const [errors, setErrors] = useState('');
+  // const [notification, setNotification] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,12 +29,10 @@ const AddFitnessActivity = () => {
     } = e.target;
 
     if (description.value.length < 10) {
-      setNotification('');
-      setErrors('Decsription\'s length must be at least 10 characters');
+      showAlert(' Decsription\'s length must be at least 10 characters', 'Error', 'danger', setAlert);
       return;
     }
-    setErrors('');
-    setNotification('Fitness activity created successfully');
+    showAlert(' Fitness Activity created successfully', 'Success', 'success', setAlert);
 
     const data = new FormData();
     data.append('fitness_activity[name]', name.value);
@@ -49,12 +51,11 @@ const AddFitnessActivity = () => {
 
   return (
     <section className="form-container container p-0 m-0">
+      <Alert alert={alert}> </Alert>
       <header>
         <h2>Create a Fitness Activity</h2>
       </header>
       <form onSubmit={(e) => handleSubmit(e)} className="fa-form auth-form">
-        <div className="error">{errors}</div>
-        <div className="notification">{notification}</div>
         <div>
           <label htmlFor="name">
             Name of Activity

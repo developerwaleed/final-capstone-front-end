@@ -31,6 +31,20 @@ code {
     monospace;
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #f00;
+}
+
 .App {
   display: flex;
 }
@@ -40,8 +54,21 @@ code {
   width: 80%;
 }
 
+#messages {
+  position: absolute;
+  top: 3%;
+  z-index: 1000;
+  left: 20%;
+  padding: 16px;
+}
+
 @media screen and (max-width: 990px) {
   .App {
     display: block;
+  }
+
+  #messages {
+    top: 12%;
+    left: 0;
   }
 }

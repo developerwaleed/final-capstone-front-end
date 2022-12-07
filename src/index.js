@@ -4,10 +4,12 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { getFitnessActivities } from './redux/actions/fitness-activities';
 import store from './redux/configureStore';
 import confirmUserSession from './utils/userSession';
 
 confirmUserSession();
+store.dispatch(getFitnessActivities());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

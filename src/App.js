@@ -12,6 +12,7 @@ import MyReservationsPage from './components/MyReservationsPage/MyReservationsPa
 import DetailsPage from './components/DetailsPage/DetailsPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import MakeReservation from './components/MakeReservation';
 
 function App() {
   return (
@@ -25,6 +26,15 @@ function App() {
             <>
               <Navigation />
               <Home />
+            </>
+)}
+        />
+        <Route
+          path="/make-reservation"
+          element={(
+            <>
+              <Navigation />
+              <MakeReservation />
             </>
 )}
         />

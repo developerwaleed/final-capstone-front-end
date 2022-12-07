@@ -45,9 +45,9 @@ export default function DetailsPage() {
           <p className="w-100 my-5">
             {activity?.description}
           </p>
-          <NavLink to={`/fitness_activities/${id}/reserve`} className="reserve-btn">
+          <NavLink to={`/fitness_activities/${id}/reserve`} className="reserve-btn nav-link btncontainer">
             <i className="fa-solid fa-dumbbell me-3"> </i>
-            <span>Reserve</span>
+            <span className="reservebtn">Reserve</span>
           </NavLink>
         </div>
       </div>

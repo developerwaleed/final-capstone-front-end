@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../styles/Navigation.css';
 import { signOut } from '../utils/userSession';
+// import Alert from './Alert';
+// import showAlert from '../hooks/useAlert';
 
 function Navigation() {
   const currentUser = useSelector((state) => state.currentUser);
@@ -19,6 +21,17 @@ function Navigation() {
     }
   }
 
+  function handleSignout() {
+    signOut();
+    document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100" role="alert">
+    <strong>Success: </strong>Signed Out Success!
+    </div>`;
+    setTimeout(() => {
+      document.getElementById('messages').innerHTML = '';
+    }, 3000);
+    navigate('/');
+  }
+
   useEffect(() => {
     if (!currentUser.user) {
       navigate('/signup?redirect=true', { replace: true });
@@ -28,6 +41,7 @@ function Navigation() {
   return (
     <>
       <div className="DesktopNavContainer">
+        {/* <Alert alert={alert}> </Alert> */}
         <h2 className="nav-head">GymFit</h2>
         <nav className="navigationLinks">
           <NavLink to="/" className="NavLink-Container">
@@ -51,7 +65,7 @@ function Navigation() {
             <span className="Nav-Links"> Delete Activity</span>
           </NavLink>
           <Link to="/login" className="NavLink-Container">
-            <button type="button" className="btn btn-light w-100 border" onClick={signOut}>
+            <button type="button" className="btn btn-danger w-100 border signout-btn" onClick={(event) => handleSignout(event, 'SignOut')}>
               Sign Out
             </button>
           </Link>
@@ -159,7 +173,7 @@ function Navigation() {
               <span className="Nav-Links"> Delete Activity</span>
             </NavLink>
             <Link to="/login" className="NavLink-Container nav-links-mobile">
-              <button type="button" className="btn btn-light w-100 border" onClick={signOut}>
+              <button type="button" className="btn btn-danger w-100 border signout-btn" onClick={(event) => handleSignout(event, 'SignOut')}>
                 Sign Out
               </button>
             </Link>

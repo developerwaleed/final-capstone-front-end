@@ -8,6 +8,8 @@ import { storeUser } from '../utils/userStorage';
 import getJwtToken from '../redux/actions/jwt-token';
 import { getFitnessActivities } from '../redux/actions/fitness-activities';
 import { storeToken } from '../utils/storeUserToken';
+import Alert from './Alert';
+import showAlert from '../hooks/useAlert';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -19,9 +21,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [processing, setProcessing] = useState(false);
-  const [errors, setErrors] = useState('');
+  const [alert, setAlert] = useState(null);
 
   if (currentUser.name) {
     navigate('/');
@@ -31,12 +31,13 @@ const SignUp = () => {
     event.preventDefault();
 
     if (password.length < 6) {
-      setPasswordError('Password must be atleast 6 characters');
+      showAlert('Password must be atleast 6 characters', 'Error', 'danger', setAlert);
       return;
     }
 
     if (passwordConfirm !== password) {
-      setPasswordError('Passwords must match');
+      showAlert('Passwords must match', 'Error', 'danger', setAlert);
+
       return;
     }
 
@@ -52,33 +53,30 @@ const SignUp = () => {
         console.log('no token');
       }
     } else {
-      setErrors(response.payload.errors);
-      setProcessing(false);
+      showAlert(response.payload.errors, 'Error', 'danger', setAlert);
     }
-    setProcessing(true);
   };
 
   useEffect(() => {
     if (search === '?redirect=true') {
-      setErrors('You must sign up before continuing');
-      setTimeout(() => {
-        setErrors('');
-      }, 5000);
+      showAlert('You must sign up before continuing', 'Error', 'danger', setAlert);
     }
   }, []);
 
   useEffect(() => {
     if (currentUser.user) {
+      storeUser(currentUser.user);
       setName('');
       setEmail('');
       setPassword('');
       setPasswordConfirm('');
-      storeUser(currentUser.user);
+      document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100" role="alert">
+      <strong>Success: </strong>Signup Success!
+      </div>`;
+      setTimeout(() => {
+        document.getElementById('messages').innerHTML = '';
+      }, 3000);
       navigate('/', { replace: true });
-    }
-    if (!currentUser.user && currentUser.errors) {
-      setErrors(currentUser.errors);
-      setProcessing(false);
     }
   }, [currentUser]);
 
@@ -87,8 +85,8 @@ const SignUp = () => {
       <header>
         <h2>Sign Up</h2>
       </header>
+      <Alert alert={alert}> </Alert>
       <form action="" className="signup-form auth-form" onSubmit={handleSubmit}>
-        <div className="error">{errors}</div>
         <div>
           <label htmlFor="signup-name">
             Your Name
@@ -114,7 +112,6 @@ const SignUp = () => {
             />
           </label>
         </div>
-        <div className="passord-error">{passwordError}</div>
         <div>
           <label htmlFor="signup-password">
             Password
@@ -140,7 +137,7 @@ const SignUp = () => {
             />
           </label>
         </div>
-        <button type="submit" disabled={processing}>{processing ? 'Signing Up...' : 'Sign Up'}</button>
+        <button type="submit">Sign Up</button>
       </form>
       <div className="text-light mt-3">
         Already have an account?
