@@ -79,7 +79,7 @@ const SignUp = () => {
   }, [currentUser]);
 
   return (
-    <section className="form-container container p-0 m-0 w-100">
+    <section className="form-container container p-2 m-0 w-100">
       <header>
         <h2>Sign Up</h2>
       </header>

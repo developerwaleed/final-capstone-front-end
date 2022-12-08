@@ -50,7 +50,7 @@ const AddFitnessActivity = () => {
   };
 
   return (
-    <section className="form-container container p-0 m-0">
+    <section className="form-container container p-2 m-0">
       <Alert alert={alert}> </Alert>
       <header>
         <h2>Create a Fitness Activity</h2>

@@ -133,7 +133,7 @@ function Navigation() {
         </i>
         <h2 className="mobile-nav-head">GymFit</h2>
         <div className={`mobile-navLinks ${showNav}`}>
-          <nav className="navigationLinks mobile-navLinks-child">
+          <nav className="navigationLinks mobile-navLinks-child px-2">
             <NavLink
               onClick={(event) => handleClick(event)}
               to="/"
