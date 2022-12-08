@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../styles/Navigation.css';
 import { signOut } from '../utils/userSession';
-// import Alert from './Alert';
-// import showAlert from '../hooks/useAlert';
 
 function Navigation() {
   const currentUser = useSelector((state) => state.currentUser);
@@ -56,14 +54,18 @@ function Navigation() {
             <i className="fa-solid fa-calendar-days"> </i>
             <span className="Nav-Links"> My Reservations</span>
           </NavLink>
-          <NavLink to="/fitness/new" className="NavLink-Container">
-            <i className="fa-solid fa-plus"> </i>
-            <span className="Nav-Links"> Add Activity</span>
-          </NavLink>
-          <NavLink to="/fitness/delete" className="NavLink-Container">
-            <i className="fa-solid fa-trash"> </i>
-            <span className="Nav-Links"> Delete Activity</span>
-          </NavLink>
+          { currentUser.user.admin && (
+          <>
+            <NavLink to="/fitness/new" className="NavLink-Container">
+              <i className="fa-solid fa-plus"> </i>
+              <span className="Nav-Links"> Add Activity</span>
+            </NavLink>
+            <NavLink to="/fitness/delete" className="NavLink-Container">
+              <i className="fa-solid fa-trash"> </i>
+              <span className="Nav-Links"> Delete Activity</span>
+            </NavLink>
+          </>
+          ) }
           <Link to="/login" className="NavLink-Container">
             <button type="button" className="btn btn-danger w-100 border signout-btn" onClick={(event) => handleSignout(event, 'SignOut')}>
               Sign Out
@@ -156,22 +158,26 @@ function Navigation() {
               <i className="fa-solid fa-calendar-days"> </i>
               <span className="Nav-Links"> My Reservations</span>
             </NavLink>
-            <NavLink
-              onClick={(event) => handleClick(event)}
-              to="/fitness/new"
-              className="NavLink-Container nav-links-mobile"
-            >
-              <i className="fa-solid fa-plus"> </i>
-              <span className="Nav-Links"> Add Activity</span>
-            </NavLink>
-            <NavLink
-              onClick={(event) => handleClick(event)}
-              to="/fitness/delete"
-              className="NavLink-Container nav-links-mobile"
-            >
-              <i className="fa-solid fa-trash"> </i>
-              <span className="Nav-Links"> Delete Activity</span>
-            </NavLink>
+            { currentUser.user.admin && (
+              <>
+                <NavLink
+                  onClick={(event) => handleClick(event)}
+                  to="/fitness/new"
+                  className="NavLink-Container nav-links-mobile"
+                >
+                  <i className="fa-solid fa-plus"> </i>
+                  <span className="Nav-Links"> Add Activity</span>
+                </NavLink>
+                <NavLink
+                  onClick={(event) => handleClick(event)}
+                  to="/fitness/delete"
+                  className="NavLink-Container nav-links-mobile"
+                >
+                  <i className="fa-solid fa-trash"> </i>
+                  <span className="Nav-Links"> Delete Activity</span>
+                </NavLink>
+              </>
+            )}
             <Link to="/login" className="NavLink-Container nav-links-mobile">
               <button type="button" className="btn btn-danger w-100 border signout-btn" onClick={(event) => handleSignout(event, 'SignOut')}>
                 Sign Out
