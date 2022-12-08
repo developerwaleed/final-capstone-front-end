@@ -1,7 +1,8 @@
-// import React, { useEffect } from 'react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { getFitnessActivities } from '../redux/actions/fitness-activities';
+import store from '../redux/configureStore';
 import '../styles/ReserveFitnessActivity.css';
 
 const MakeReservation = () => {
@@ -9,6 +10,10 @@ const MakeReservation = () => {
   const activities = useSelector(
     (state) => state.fitnessActivities.fitnessActivities,
   );
+
+  useEffect(() => {
+    store.dispatch(getFitnessActivities());
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

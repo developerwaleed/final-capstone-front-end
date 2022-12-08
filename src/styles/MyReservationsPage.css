@@ -28,4 +28,12 @@
     width: 100px;
     height: 100px;
   }
+
+  .my-reservation-header {
+    text-align: center;
+  }
+
+  .my-reservation-container {
+    justify-content: center;
+  }
 }

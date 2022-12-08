@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getReservations } from '../../redux/actions/reservations';
 import '../../styles/MyReservationsPage.css';
 import MyReservationsCard from './MyReservationsCard';
@@ -29,7 +30,7 @@ export default function MyReservationsPage() {
         <div className="my-reservation-header">
           <h2 className="mt-2"><strong>My Reservations</strong></h2>
         </div>
-        <div className={`d-flex gap-4 flex-wrap align-items-center ${length > 3 && 'justify-content-center'} mt-4`}>
+        <div className={`my-reservation-container d-flex gap-4 flex-wrap align-items-center ${length > 3 && 'justify-content-center'} mt-4`}>
           {reservationsCombined?.map((reservation) => (
             <MyReservationsCard
               key={reservation.id}
@@ -42,6 +43,14 @@ export default function MyReservationsPage() {
           ))}
         </div>
       </div>
+      {
+        !reservationsCombined.length && (
+          <div className="text-center">
+            <div>You currently do not have any reservations</div>
+            <Link to="/make-reservation">Make a reservation?</Link>
+          </div>
+        )
+      }
     </div>
   );
 }
