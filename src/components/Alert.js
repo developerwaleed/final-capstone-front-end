@@ -22,7 +22,7 @@ Alert.propTypes = {
     type: PropTypes.string,
     title: PropTypes.string,
     message: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 export default Alert;

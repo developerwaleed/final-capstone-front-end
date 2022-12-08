@@ -20,7 +20,7 @@ const fitnessActivitiesSlice = createSlice({
       }))
       .addCase(addFitnessActivity.fulfilled, (state, action) => {
         const { fitnessActivities } = state;
-        const newFitnessActivities = [...fitnessActivities, action.payload];
+        const newFitnessActivities = [fitnessActivities, action.payload];
         return {
           ...state,
           fitnessActivities: newFitnessActivities,

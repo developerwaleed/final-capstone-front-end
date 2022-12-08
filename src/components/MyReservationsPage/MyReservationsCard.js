@@ -61,8 +61,8 @@ const MyReservationsCard = ({
 };
 
 MyReservationsCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  fitnessActivityId: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  fitnessActivityId: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
