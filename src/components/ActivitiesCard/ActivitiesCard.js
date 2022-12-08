@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import API_ROUTE from '../../config/api-route';
 import '../../styles/ActivitiesCard.css';
 
-// eslint-disable-next-line react/prop-types
 const ActivityCard = ({
   id,
   FitnessActivityName,
@@ -35,5 +34,13 @@ const ActivityCard = ({
     </div>
   </NavLink>
 );
+
+ActivityCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  FitnessActivityName: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  Description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
 
 export default ActivityCard;
