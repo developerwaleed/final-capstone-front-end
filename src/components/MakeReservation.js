@@ -18,9 +18,9 @@ const MakeReservation = () => {
   };
 
   return (
-    <section className="reserve-form-container form-container container p-0 m-0">
+    <section className="reserve-form-container form-container container p-2 m-0">
       <header>
-        <h2>Please Select an Activity to Reserve!</h2>
+        <h2 className="text-center text-uppercase">Select an Activity to Reserve!</h2>
       </header>
       <form onSubmit={(e) => handleSubmit(e)} className="reserve-form">
         <select name="Activity" id="SelectActivity">
