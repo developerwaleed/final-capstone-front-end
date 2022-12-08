@@ -36,7 +36,6 @@ const getReservations = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log(response.data.data[0].relationships);
     return response.data;
   },
 );

@@ -16,7 +16,7 @@ import Login from './components/Login';
 import MakeReservation from './components/MakeReservation';
 import ErrorPage from './components/ErrorPage';
 
-function App() {
+const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
   return (
     <Router>
@@ -94,6 +94,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

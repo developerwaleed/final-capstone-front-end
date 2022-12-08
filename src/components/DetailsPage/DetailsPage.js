@@ -6,7 +6,7 @@ import getSingleActivity from '../../redux/actions/single-activity';
 import '../../styles/DetailsPage.css';
 import API_ROUTE from '../../config/api-route';
 
-export default function DetailsPage() {
+const DetailsPage = () => {
   const singleActivity = useSelector((state) => state.singleActivity);
   const { id } = useParams();
 
@@ -53,4 +53,6 @@ export default function DetailsPage() {
       </div>
     </div>
   );
-}
+};
+
+export default DetailsPage;

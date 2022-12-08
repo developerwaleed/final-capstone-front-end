@@ -4,20 +4,20 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../styles/Navigation.css';
 import { signOut } from '../utils/userSession';
 
-function Navigation() {
+const Navigation = () => {
   const currentUser = useSelector((state) => state.currentUser);
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState('');
 
-  function handleClick() {
+  const handleClick = () => {
     if (showNav !== 'visible') {
       setShowNav('visible');
     } else {
       setShowNav('');
     }
-  }
+  };
 
-  function handleSignout() {
+  const handleSignout = () => {
     signOut();
     document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100" role="alert">
     <strong>Success: </strong>Signed Out Success!
@@ -26,7 +26,7 @@ function Navigation() {
       document.getElementById('messages').innerHTML = '';
     }, 3000);
     navigate('/');
-  }
+  };
 
   useEffect(() => {
     if (!currentUser.user) {
@@ -183,6 +183,6 @@ function Navigation() {
       </div>
     </>
   );
-}
+};
 
 export default Navigation;

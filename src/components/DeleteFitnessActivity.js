@@ -5,7 +5,7 @@ import { deleteFitnessActivity, getFitnessActivities } from '../redux/actions/fi
 import store from '../redux/configureStore';
 import '../styles/DeleteActivity.css';
 
-export default function DeleteFitnessActivity() {
+const DeleteFitnessActivity = () => {
   const { fitnessActivities } = useSelector((state) => state.fitnessActivities);
 
   useEffect(() => {
@@ -51,4 +51,6 @@ export default function DeleteFitnessActivity() {
       </ul>
     </div>
   );
-}
+};
+
+export default DeleteFitnessActivity;

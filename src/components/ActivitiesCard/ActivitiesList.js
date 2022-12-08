@@ -6,7 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import ActivitiesCard from './ActivitiesCard';
 import '../../styles/Carousel.css';
 
-export default function ActivitiesList() {
+const ActivitiesList = () => {
   const activities = useSelector((state) => state.fitnessActivities.fitnessActivities);
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
@@ -74,4 +74,6 @@ export default function ActivitiesList() {
         )}
     </>
   );
-}
+};
+
+export default ActivitiesList;
