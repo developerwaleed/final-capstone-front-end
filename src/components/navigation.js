@@ -54,7 +54,7 @@ function Navigation() {
             <i className="fa-solid fa-calendar-days"> </i>
             <span className="Nav-Links"> My Reservations</span>
           </NavLink>
-          { currentUser.user.admin && (
+          { currentUser.user?.admin && (
           <>
             <NavLink to="/fitness/new" className="NavLink-Container">
               <i className="fa-solid fa-plus"> </i>
@@ -158,7 +158,7 @@ function Navigation() {
               <i className="fa-solid fa-calendar-days"> </i>
               <span className="Nav-Links"> My Reservations</span>
             </NavLink>
-            { currentUser.user.admin && (
+            { currentUser.user?.admin && (
               <>
                 <NavLink
                   onClick={(event) => handleClick(event)}

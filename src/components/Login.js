@@ -39,8 +39,8 @@ const Login = () => {
     dispatch(getCurrentUser(user));
     const response = await dispatch(getJwtToken(credentials));
     if (response.payload.token) {
-      dispatch(getFitnessActivities());
       storeToken(response.payload.token);
+      dispatch(getFitnessActivities());
       document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100 h-25" role="alert">
       <strong>Success: </strong>Login Success
       </div>`;
