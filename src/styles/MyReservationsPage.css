@@ -19,6 +19,17 @@
   color: var(--primary-green);
 }
 
+.no-reservation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  height: 60vh;
+  align-items: center;
+  font-size: 1.25rem;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 350px;

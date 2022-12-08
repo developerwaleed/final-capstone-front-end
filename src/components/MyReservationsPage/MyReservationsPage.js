@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getReservations } from '../../redux/actions/reservations';
 import '../../styles/MyReservationsPage.css';
+import '../../styles/DetailsPage.css';
 import MyReservationsCard from './MyReservationsCard';
 
 export default function MyReservationsPage() {
@@ -45,9 +46,9 @@ export default function MyReservationsPage() {
       </div>
       {
         !reservationsCombined.length && (
-          <div className="text-center">
+          <div className="text-center no-reservation nav-links">
             <div>You currently do not have any reservations</div>
-            <Link to="/make-reservation">Make a reservation?</Link>
+            <Link className="reserve-btn nav-link" to="/make-reservation">Make a reservation ?</Link>
           </div>
         )
       }
