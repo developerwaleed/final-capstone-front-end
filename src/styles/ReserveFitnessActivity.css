@@ -1,3 +1,14 @@
+blockquote {
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid #4ad669;
+  z-index: 0;
+  margin-block: 4px;
+}
+
 .reserve-form-container {
   color: #fff;
   gap: 1rem;

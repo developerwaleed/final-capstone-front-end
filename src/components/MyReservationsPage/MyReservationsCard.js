@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import API_ROUTE from '../../config/api-route';
 import { deleteReservation, getReservations } from '../../redux/actions/reservations';
 import store from '../../redux/configureStore';
@@ -58,6 +58,14 @@ const MyReservationsCard = ({
       </button>
     </div>
   );
+};
+
+MyReservationsCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  fitnessActivityId: PropTypes.number.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default MyReservationsCard;

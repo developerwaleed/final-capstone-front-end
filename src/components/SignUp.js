@@ -21,7 +21,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [alert, setAlert] = useState(null);
+  const [alert, setAlert] = useState({ });
 
   if (currentUser.name) {
     navigate('/');
@@ -79,7 +79,7 @@ const SignUp = () => {
   }, [currentUser]);
 
   return (
-    <section className="form-container container p-0 m-0 w-100">
+    <section className="form-container container p-2 m-0 w-100">
       <header>
         <h2>Sign Up</h2>
       </header>

@@ -1,7 +1,8 @@
-// import React, { useEffect } from 'react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { getFitnessActivities } from '../redux/actions/fitness-activities';
+import store from '../redux/configureStore';
 import '../styles/ReserveFitnessActivity.css';
 
 const MakeReservation = () => {
@@ -9,6 +10,10 @@ const MakeReservation = () => {
   const activities = useSelector(
     (state) => state.fitnessActivities.fitnessActivities,
   );
+
+  useEffect(() => {
+    store.dispatch(getFitnessActivities());
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +23,9 @@ const MakeReservation = () => {
   };
 
   return (
-    <section className="reserve-form-container form-container container p-0 m-0">
+    <section className="reserve-form-container form-container container p-2 m-0">
       <header>
-        <h2>Please Select an Activity to Reserve!</h2>
+        <h2 className="text-center text-uppercase">Select an Activity to Reserve!</h2>
       </header>
       <form onSubmit={(e) => handleSubmit(e)} className="reserve-form">
         <select name="Activity" id="SelectActivity">

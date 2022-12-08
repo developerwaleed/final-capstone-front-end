@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import API_ROUTE from '../config/api-route';
 import { deleteFitnessActivity, getFitnessActivities } from '../redux/actions/fitness-activities';
@@ -7,6 +7,10 @@ import '../styles/DeleteActivity.css';
 
 export default function DeleteFitnessActivity() {
   const { fitnessActivities } = useSelector((state) => state.fitnessActivities);
+
+  useEffect(() => {
+    store.dispatch(getFitnessActivities());
+  }, []);
 
   const deleteFitness = async (id) => {
     const { payload } = await store.dispatch(deleteFitnessActivity(id));
@@ -32,7 +36,7 @@ export default function DeleteFitnessActivity() {
     <div className="delete-container container p-0 m-0">
       <ul className="activity-wrapper">
         {
-      fitnessActivities?.data.map((fitnessActivity) => (
+      fitnessActivities.data?.map((fitnessActivity) => (
         <li key={fitnessActivity.id}>
           <img src={`${API_ROUTE}${fitnessActivity.attributes['images-urls'][1]}`} alt="activity-img" />
           <div className="activity-contents">

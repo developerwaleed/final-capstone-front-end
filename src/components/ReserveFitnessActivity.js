@@ -1,13 +1,24 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import randomItem from '../utils/randomItem';
 import {
   getAvailableDates,
   addReservation,
   getReservations,
 } from '../redux/actions/reservations';
 import '../styles/ReserveFitnessActivity.css';
+
+const fitnessActivityQuotes = [
+  "I don't count my sit-ups. I only start counting when it starts hurting because they’re the only ones that count.",
+  'If you change the way you look at things, the things you look at change.',
+  'You just can’t beat the person who never gives up.',
+  'Take care of your body. It’s the only place you have to live.',
+  'Do something today that your future self will thank you for.',
+  'Push harder than yesterday if you want a different tomorrow.',
+  'Success is usually the culmination of controlling failure.',
+  'The body achieves what the mind believes.',
+];
 
 const ReserveFitnessActivity = () => {
   const navigate = useNavigate();
@@ -31,10 +42,10 @@ const ReserveFitnessActivity = () => {
     };
 
     const response = await dispatch(addReservation(data));
-    // log the response status
     if (response.payload.message) {
-      // console.log(response.payload.message);
-      document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100 h-25" role="alert">
+      document.getElementById(
+        'messages',
+      ).innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100 h-25" role="alert">
       <strong>Success: </strong>${response.payload.message}
       </div>`;
       setTimeout(() => {
@@ -42,7 +53,9 @@ const ReserveFitnessActivity = () => {
       }, 3000);
       navigate('/make-reservation');
     } else {
-      document.getElementById('messages').innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-100 h-25" role="alert">
+      document.getElementById(
+        'messages',
+      ).innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-100 h-25" role="alert">
       <strong>Error: </strong>${response.payload.errors[0]}
       </div>`;
       setTimeout(() => {
@@ -56,15 +69,17 @@ const ReserveFitnessActivity = () => {
   };
 
   return (
-    <section className="reserve-form-container form-container container p-0 m-0">
+    <section className="reserve-form-container form-container container p-2 m-0">
       <header>
-        <h2>RESERVE A FITNESS ACTIVITY</h2>
+        <h2 className="text-center">RESERVE A FITNESS ACTIVITY</h2>
       </header>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestiae
-        quidem, nisi ducimus, commodi assumenda sint, maiores sunt accusamus
-        temporibus maxime laboriosam officiis? Facere cum maiores dolore.
-      </p>
+      <blockquote>
+        <p className="text-center">
+          <span className="">
+            {randomItem(fitnessActivityQuotes)}
+          </span>
+        </p>
+      </blockquote>
       <form onSubmit={(e) => handleSubmit(e)} className="reserve-form">
         <select name="date" id="date">
           {availableDates.data?.length < 1 && (

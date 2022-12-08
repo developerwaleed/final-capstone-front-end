@@ -34,6 +34,11 @@
   padding: 0 30px;
 }
 
+.Activities-carousel {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 550px) {
   .slider-control-centerright button {
     padding: 0 1.25rem;

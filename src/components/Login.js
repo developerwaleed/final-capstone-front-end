@@ -10,7 +10,7 @@ import Alert from './Alert';
 import showAlert from '../hooks/useAlert';
 
 const Login = () => {
-  const [alert, setAlert] = useState(null);
+  const [alert, setAlert] = useState({});
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,8 +39,8 @@ const Login = () => {
     dispatch(getCurrentUser(user));
     const response = await dispatch(getJwtToken(credentials));
     if (response.payload.token) {
-      dispatch(getFitnessActivities());
       storeToken(response.payload.token);
+      dispatch(getFitnessActivities());
       document.getElementById('messages').innerHTML = `<div class="alert alert-success alert-dismissible fade show w-100 h-25" role="alert">
       <strong>Success: </strong>Login Success
       </div>`;
@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   return (
-    <section className="form-container container p-0 m-0 w-100">
+    <section className="form-container container p-2 m-0 w-100">
       <header>
         <h2>Log In</h2>
       </header>

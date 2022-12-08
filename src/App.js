@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Navigation from './components/navigation';
 import './styles/Navigation.css';
 import './styles/App.css';
@@ -13,8 +14,10 @@ import DetailsPage from './components/DetailsPage/DetailsPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import MakeReservation from './components/MakeReservation';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
+  const currentUser = useSelector((state) => state.currentUser);
   return (
     <Router>
       <Routes>
@@ -27,7 +30,7 @@ function App() {
               <Navigation />
               <Home />
             </>
-)}
+          )}
         />
         <Route
           path="/make-reservation"
@@ -36,7 +39,7 @@ function App() {
               <Navigation />
               <MakeReservation />
             </>
-)}
+          )}
         />
         <Route
           path="/fitness_activities/:id/reserve"
@@ -45,7 +48,7 @@ function App() {
               <Navigation />
               <ReserveFitnessActivity />
             </>
-)}
+          )}
         />
         <Route
           path="/reservations"
@@ -54,26 +57,30 @@ function App() {
               <Navigation />
               <MyReservationsPage />
             </>
-)}
+          )}
         />
-        <Route
-          path="/fitness/new"
-          element={(
-            <>
-              <Navigation />
-              <AddFitnessActivity />
-            </>
-)}
-        />
-        <Route
-          path="/fitness/delete"
-          element={(
-            <>
-              <Navigation />
-              <DeleteFitnessActivity />
-            </>
-)}
-        />
+        {currentUser.user?.admin && (
+          <>
+            <Route
+              path="/fitness/new"
+              element={(
+                <>
+                  <Navigation />
+                  <AddFitnessActivity />
+                </>
+              )}
+            />
+            <Route
+              path="/fitness/delete"
+              element={(
+                <>
+                  <Navigation />
+                  <DeleteFitnessActivity />
+                </>
+              )}
+            />
+          </>
+        )}
         <Route
           path="/fitness_activities/:id"
           element={(
@@ -81,8 +88,9 @@ function App() {
               <Navigation />
               <DetailsPage />
             </>
-)}
+          )}
         />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
