@@ -10,7 +10,7 @@ import Alert from './Alert';
 import showAlert from '../hooks/useAlert';
 
 const Login = () => {
-  const [alert, setAlert] = useState(null);
+  const [alert, setAlert] = useState({});
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

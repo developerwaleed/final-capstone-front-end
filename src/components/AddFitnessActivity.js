@@ -9,7 +9,7 @@ import showAlert from '../hooks/useAlert';
 
 const fitnessActivityNames = ['Yoga', 'Gym', 'Swimming', 'Medication'];
 const AddFitnessActivity = () => {
-  const [alert, setAlert] = useState(null);
+  const [alert, setAlert] = useState({});
 
   const dispatch = useDispatch();
 

@@ -36,7 +36,7 @@ export default function DeleteFitnessActivity() {
     <div className="delete-container container p-0 m-0">
       <ul className="activity-wrapper">
         {
-      fitnessActivities?.data.map((fitnessActivity) => (
+      fitnessActivities.data?.map((fitnessActivity) => (
         <li key={fitnessActivity.id}>
           <img src={`${API_ROUTE}${fitnessActivity.attributes['images-urls'][1]}`} alt="activity-img" />
           <div className="activity-contents">

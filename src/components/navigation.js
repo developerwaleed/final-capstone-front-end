@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
@@ -39,7 +37,6 @@ function Navigation() {
   return (
     <>
       <div className="DesktopNavContainer">
-        {/* <Alert alert={alert}> </Alert> */}
         <h2 className="nav-head">GymFit</h2>
         <nav className="navigationLinks">
           <NavLink to="/" className="NavLink-Container">
@@ -128,9 +125,7 @@ function Navigation() {
       </div>
 
       <div className="mobile-nav">
-        <i onClick={(event) => handleClick(event)} className="fa-solid fa-bars">
-          {' '}
-        </i>
+        <i onClick={(event) => handleClick(event)} className="fa-solid fa-bars" />
         <h2 className="mobile-nav-head">GymFit</h2>
         <div className={`mobile-navLinks ${showNav}`}>
           <nav className="navigationLinks mobile-navLinks-child px-2">
