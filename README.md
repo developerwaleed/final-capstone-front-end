@@ -147,6 +147,7 @@ You can deploy this project using:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
+## 👥 Authors <a name="author"></a>
 | 👤 Name | Github | Twitter | LinkedIn |
 |------|--------|---------|----------|
 |Waleed Amjad|[@developerwaleed](https://github.com/developerwaleed)|[@developerwaleed](https://twitter.com/developerwaleed)|[@developerwaleed](https://www.linkedin.com/in/developerwaleed/)|
