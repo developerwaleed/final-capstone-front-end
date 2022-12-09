@@ -10,4 +10,10 @@ describe('Delete users', () => {
     deleteFunction(fitActivities, 1);
     expect(fitActivities).toHaveLength(2);
   });
+
+  test('Test if there is no activities', () => {
+    const fitActivities = [];
+    deleteFunction(fitActivities, 1);
+    expect(fitActivities).toHaveLength(0);
+  });
 });
