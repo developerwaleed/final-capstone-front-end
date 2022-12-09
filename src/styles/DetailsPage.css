@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.detailContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 50px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.trainerName {
+  display: flex;
+  gap: 0 10px;
+  background-color: #ecf0f1;
+  padding: 10px 20px 0 20px;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+}
+
+.priceColor {
+  color: white;
+}
+
+.ActivityPicture {
+  margin-left: 60px;
+  margin-top: 80px;
+}
+
+.ActivityPicture img {
+  min-height: 450px;
+  max-height: 451px;
+  object-fit: cover;
+  min-width: 450px;
+  max-width: 450px;
+  border-radius: 20px;
+}
+
+.details h2 {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.details {
+  width: 20%;
+}
+
+.reservebtn {
+  justify-items: end;
+}
+
+.detail {
+  position: relative;
+  padding: 10px;
+}
+
+.btncontainer {
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+  padding: 10px;
+}
+
+.reserve-btn {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #97c010;
+  color: #fff;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+.reserve-btn:hover {
+  background-color: #b2d235;
+  color: #fff;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .detailContainer {
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .ActivityPicture {
+    margin: auto;
+    align-items: center;
+  }
+
+  .ActivityPicture img {
+    margin-top: 50px;
+    justify-content: center;
+    min-height: 450px;
+    max-height: 451px;
+    object-fit: cover;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+  }
+
+  .detail {
+    position: relative;
+    padding: 10px;
+  }
+
+  .btncontainer {
+    position: relative;
+    bottom: 0;
+    right: 10px;
+    padding: 10px;
+  }
+
+  .trainerName {
+    display: flex;
+    gap: 0 10px;
+    background-color: #ecf0f1;
+  }
+
+  .btncontainer button {
+    margin: 30px 0;
+  }
+
+  .detail h2 {
+    margin: auto;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .detailContainer {
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .detail {
+    position: relative;
+    padding: 10px;
+  }
+
+  .btncontainer {
+    position: relative;
+    bottom: 0;
+    right: 10px;
+    padding: 10px;
+  }
+
+  .trainerName {
+    display: flex;
+    gap: 0 10px;
+    background-color: #ecf0f1;
+  }
+
+  .btncontainer button {
+    margin: 30px 0;
+  }
+
+  .detail h2 {
+    margin: auto;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}

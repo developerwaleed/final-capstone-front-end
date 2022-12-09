@@ -1,0 +1,12 @@
+.Alert-Cont {
+  position: absolute;
+  top: 6%;
+  width: 75%;
+}
+
+@media screen and (max-width: 990px) {
+  .Alert-Cont {
+    top: 10%;
+    width: 100%;
+  }
+}
