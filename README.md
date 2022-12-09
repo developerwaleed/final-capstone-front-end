@@ -133,7 +133,9 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-> Currently no tests are present
+```
+npm run test
+```
 
 ### Deployment
 

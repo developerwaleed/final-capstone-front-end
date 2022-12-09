@@ -6,7 +6,7 @@ import '../../styles/MyReservationsPage.css';
 import '../../styles/DetailsPage.css';
 import MyReservationsCard from './MyReservationsCard';
 
-export default function MyReservationsPage() {
+const MyReservationsPage = () => {
   const dispatch = useDispatch();
   const reservationsData = useSelector((state) => state.reservations.reservations);
   const reservations = reservationsData.data || [];
@@ -54,4 +54,6 @@ export default function MyReservationsPage() {
       }
     </div>
   );
-}
+};
+
+export default MyReservationsPage;
