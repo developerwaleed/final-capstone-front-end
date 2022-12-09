@@ -54,6 +54,8 @@
 
 **GymFit** is a React front-end application that helps users make reservations for varying fitness activities while performing CRUD operations on the [Rails back-end application](https://github.com/developerwaleed/final-capstone-back-end).
 
+<div align="center"><img src='./public/GymFit.jpg' width="1000"></div>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
