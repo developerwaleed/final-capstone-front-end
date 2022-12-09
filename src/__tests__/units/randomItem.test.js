@@ -1,4 +1,4 @@
-import randomItem from "../../utils/randomItem";
+import randomItem from '../../utils/randomItem';
 
 describe('RandomItem', () => {
   test('should get random item from array', () => {
