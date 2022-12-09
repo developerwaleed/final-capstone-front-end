@@ -147,38 +147,13 @@ You can deploy this project using:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-### 👤 **Author1**
-
-- GitHub: [Waleed Amjad](https://github.com/developerwaleed)
-- LinkedIn: [Waleed Amjad](https://www.linkedin.com/in/developerwaleed/)
-- Twitter: [@developerwaleed](https://twitter.com/developerwaleed)
-
-### 👤 **Author2**
-
-- GitHub: [Okoye Charles](https://github.com/OkoyeCharles)
-- LinkedIn: [Okoye Charles](https://www.linkedin.com/in/charles-k-okoye/)
-- Twitter: [@Okoyecharles_](https://twitter.com/OkoyeCharles_)
-
-### 👤 **Author3**
-
-- GitHub: [Sidney Kaguli](https://github.com/xSidx)
-- LinkedIn: [Sidney kaguli](https://www.linkedin.com/in/sidney-kaguli/)
-- Twitter: [@_sid_o](https://twitter.com/_sid_o)
-
-### 👤 **Author4**
-
-- GitHub: [Priscilla Oyebade](https://github.com/OyePriscilla)
-- LinkedIn: [Priscilla Oyebade](https://www.linkedin.com/in/priscilla-oyebade-aa35b8238/)
-- Twitter: [@Prisicilla](https://twitter.com/Prisicilla)
-
-### 👤 **Author5**
-
-- GitHub: [Abdulhamid](https://github.com/abdulhamiid)
-- LinkedIn: [Abdulhamid Adio](https://www.linkedin.com/in/abdulhamid-adio/)
-- Twitter: [@abdulhamid_adio](https://twitter.com/abdulhamid_adio)
+| 👤 Name | Github | Twitter | LinkedIn |
+|------|--------|---------|----------|
+|Waleed Amjad|[@developerwaleed](https://github.com/developerwaleed)|[@developerwaleed](https://twitter.com/developerwaleed)|[@developerwaleed](https://www.linkedin.com/in/developerwaleed/)|
+|Okoye Charles|[@Okoyecharles](https://github.com/OkoyeCharles)|[@Okoyecharles_](https://twitter.com/OkoyeCharles_)|[@Okoye Charles](https://www.linkedin.com/in/charles-k-okoye/)|
+|Sidney Kaguli|[@xSidx](https://github.com/xSidx)|[@_sid_o](https://twitter.com/_sid_o)|[@sidney-kaguli](https://www.linkedin.com/in/sidney-kaguli/)|
+|Priscilla Oyebade|[@OyePriscilla](https://github.com/OyePriscilla)|[@Prisicilla](https://twitter.com/Prisicilla)|[@Priscilla Oyebade](https://www.linkedin.com/in/priscilla-oyebade-aa35b8238/)|
+|Abdulhamid|[Abdulhamid](https://github.com/abdulhamiid)|[@abdulhamid_adio](https://twitter.com/abdulhamid_adio)|[@Abdulhamid Adio](https://www.linkedin.com/in/abdulhamid-adio/)|
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
