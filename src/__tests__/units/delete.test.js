@@ -1,7 +1,7 @@
 import deleteFunction from '../../utils/deleteFunction';
 
-describe('Delete users', () => {
-  test('Delete item from array', () => {
+describe('Delete activities from array', () => {
+  test('Delete an item from array', () => {
     const fitActivities = [
       { name: 'Gym', image: 'image.jpg', index: 1 },
       { name: 'Swim', image: 'image2.jpg', index: 2 },
@@ -11,7 +11,7 @@ describe('Delete users', () => {
     expect(fitActivities).toHaveLength(2);
   });
 
-  test('Test if there is no activities', () => {
+  test('Test if there is no activity in the array', () => {
     const fitActivities = [];
     deleteFunction(fitActivities, 1);
     expect(fitActivities).toHaveLength(0);
