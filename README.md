@@ -84,7 +84,7 @@ This projects aim is to serve as the frontend for our fitness activities applica
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Currently no demo is available
+> [Live Demo](https://final-capstone-front-lfmdhnejp-developerwaleed.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
